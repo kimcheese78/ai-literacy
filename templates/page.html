@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <p class="brand">{{SITE_NAME}}</p>
+  <h1 class="tagline">{{TAGLINE}}</h1>
+  <p class="promise">Start here. No signup, no jargon, no hype — and every section shows when it was last checked.</p>
+  <nav aria-label="Sections">
+    {{NAV}}
+  </nav>
+</header>
+<main id="main">
+{{SECTIONS}}
+</main>
+<footer class="site-footer">
+  <p>{{FOOTER_TEXT}}</p>
+  <p>{{FOOTER_LINKS}}</p>
+  <p class="built">Site generated {{BUILD_DATE}} · <a href="#top-anchor">Back to top</a></p>
+</footer>
+<script>
+{{JS}}
+</script>
+</body>
+</html>

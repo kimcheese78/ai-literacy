@@ -1,0 +1,50 @@
+{
+  "intro": "The five tools a beginner is most likely to meet, in plain terms. There are hundreds of AI products; you can ignore almost all of them. Every card shows when it was last checked.",
+  "cards": [
+    {
+      "name": "ChatGPT",
+      "company": "OpenAI",
+      "plainDescription": "The chatbot that started the boom, and still the most widely used. A strong all-rounder: writing, questions, brainstorming, images, and spoken conversation.",
+      "goodFor": ["Everyday questions and writing help", "Talking to it out loud (voice mode)", "Creating images from a description"],
+      "freeAccess": "Free to use; paid plan adds heavier use and newer features.",
+      "sources": [{ "label": "Official site", "url": "https://openai.com/chatgpt/overview/" }],
+      "lastUpdated": "2026-07-03"
+    },
+    {
+      "name": "Claude",
+      "company": "Anthropic",
+      "plainDescription": "A chatbot known for careful, natural writing and strong reasoning. Particularly good with long documents and thoughtful, nuanced work. (Full disclosure: this site is maintained with Claude's help — see the trust section.)",
+      "goodFor": ["Writing and editing that sounds human", "Reading and summarizing long documents", "Coding help (Claude Code is a developer favorite)"],
+      "freeAccess": "Free to use; paid plan adds heavier use and newer features.",
+      "sources": [{ "label": "Official site", "url": "https://claude.com/product/overview" }],
+      "lastUpdated": "2026-07-03"
+    },
+    {
+      "name": "Gemini",
+      "company": "Google",
+      "plainDescription": "Google's chatbot, woven into the tools many people already use — Search, Gmail, Docs, and Android phones.",
+      "goodFor": ["Questions that benefit from fresh web results", "Help inside Gmail and Google Docs", "Working with photos and videos"],
+      "freeAccess": "Free to use; paid plan adds heavier use and newer features.",
+      "sources": [{ "label": "Official site", "url": "https://gemini.google/about/" }],
+      "lastUpdated": "2026-07-03"
+    },
+    {
+      "name": "Microsoft Copilot",
+      "company": "Microsoft",
+      "plainDescription": "Microsoft's AI assistant, built into Windows, Edge, and (with a work or paid plan) Word, Excel, and Outlook. If your life runs on Office, this is the one you'll meet at work.",
+      "goodFor": ["Drafting and summarizing in Word and Outlook", "Making sense of spreadsheets", "General questions, built into Windows"],
+      "freeAccess": "Free version available; the deeper work-data integration comes with paid or workplace plans.",
+      "sources": [{ "label": "Official site", "url": "https://copilot.microsoft.com/" }],
+      "lastUpdated": "2026-07-03"
+    },
+    {
+      "name": "Perplexity",
+      "company": "Perplexity AI",
+      "plainDescription": "An AI-powered answer engine: ask a question, get a direct answer with links to its sources. The most beginner-friendly way to research a topic without wading through search results.",
+      "goodFor": ["Research questions where you want sources shown", "Comparing products or options", "News and current events with citations"],
+      "freeAccess": "Free to use; paid plan adds heavier use and newer features.",
+      "sources": [{ "label": "Official site", "url": "https://www.perplexity.ai/" }],
+      "lastUpdated": "2026-07-03"
+    }
+  ]
+}
