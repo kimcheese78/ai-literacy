@@ -20,9 +20,11 @@ function collect(text, from) {
   }
 }
 
-for (const f of ['site.json', 'glossary.json', 'landscape.json']) {
+for (const f of ['glossary.json', 'landscape.json']) {
   collect(readFileSync(join(CONTENT, f), 'utf8'), f);
 }
+// site.json holds the site's own url/repoUrl (config, not sources) — and on the
+// very first CI run those don't exist yet, so they are deliberately not checked.
 for (const f of readdirSync(join(CONTENT, 'sections'))) {
   collect(readFileSync(join(CONTENT, 'sections', f), 'utf8'), `sections/${f}`);
 }

@@ -123,7 +123,6 @@ section.block {
 .tier > summary {
   cursor: pointer;
   list-style: none;
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem .6rem;
   padding: .95rem 1.1rem;
   font-weight: 600;
 }
@@ -131,11 +130,12 @@ section.block {
 .tier > summary::before {
   content: "▸"; color: var(--accent); font-size: .85em;
   transition: transform .15s ease; display: inline-block;
+  margin-right: .45rem;
 }
 .tier[open] > summary::before { transform: rotate(90deg); }
-.tier > summary .count { color: var(--muted); font-weight: 400; font-size: .85rem; }
+.tier > summary .count { color: var(--muted); font-weight: 400; font-size: .85rem; white-space: nowrap; }
 .tier > summary .sub {
-  flex-basis: 100%; font-weight: 400; color: var(--muted); font-size: .9rem; margin-left: 1.15rem;
+  display: block; font-weight: 400; color: var(--muted); font-size: .9rem; margin: .15rem 0 0 1.15rem;
 }
 .terms { padding: 0 1.1rem 1rem; display: grid; gap: .6rem; }
 .term {
