@@ -1,6 +1,8 @@
 ---
 title: Go deeper (optional)
-lastUpdated: 2026-07-03
+kicker: Keep going
+takeaway: Five free resources. ==Zero== of them are selling you anything.
+lastUpdated: 2026-07-04
 reviewBy: quarterly
 ---
 If this page did its job, you don't *need* anything else to start using AI well. But if you're curious, these are the free resources worth your time — chosen because they're beginner-friendly, trustworthy, and not trying to sell you anything.

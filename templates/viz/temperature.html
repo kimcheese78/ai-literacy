@@ -1,0 +1,17 @@
+<figure class="viz temp" id="temp">
+<p class="viz-kicker">One setting, three personalities</p>
+<p class="quiz-q">Prompt: "Describe your morning coffee."</p>
+<label for="temp-range" class="chop-count">Temperature: <strong id="temp-label">0 — predictable</strong></label>
+<input type="range" id="temp-range" min="0" max="2" step="1" value="0" aria-describedby="temp-out">
+<div class="temp-scale" aria-hidden="true"><span>0 · safe</span><span>1 · balanced</span><span>2 · adventurous</span></div>
+<p class="temp-out" id="temp-out">"Hot, black coffee in my favorite mug."</p>
+<p class="temp-note" id="temp-note">ask again → the exact same answer</p>
+<p class="viz-caption">Real outputs vary; these are canned to show the pattern. Chatbots you use are tuned somewhere near the middle.</p>
+</figure>
+<script type="application/json" id="temp-data">
+[
+  { "label": "0 — predictable", "out": "\"Hot, black coffee in my favorite mug.\"", "note": "ask again → the exact same answer" },
+  { "label": "1 — balanced", "out": "\"A strong flat white — the day doesn't really start until the first sip.\"", "note": "ask again → similar idea, new wording" },
+  { "label": "2 — adventurous", "out": "\"Liquid ambition! A tiny volcanic lagoon negotiating with my sleepy soul.\"", "note": "ask again → genuinely anyone's guess" }
+]
+</script>

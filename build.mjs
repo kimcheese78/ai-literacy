@@ -107,9 +107,20 @@ function escapeHtml(s) {
 function inline(s) {
   return escapeHtml(s)
     .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/==([^=]+)==/g, '<mark>$1</mark>')
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
+// ::viz name:: on its own line embeds templates/viz/<name>.html verbatim
+function loadViz(name) {
+  try {
+    return readFileSync(join(ROOT, 'templates', 'viz', `${name}.html`), 'utf8');
+  } catch {
+    errors.push(`viz "${name}": templates/viz/${name}.html not found`);
+    return '';
+  }
 }
 
 function markdown(src) {
@@ -118,7 +129,10 @@ function markdown(src) {
   for (const block of blocks) {
     const lines = block.trim().split('\n');
     if (!lines[0]) continue;
-    if (lines.every((l) => /^[-*] /.test(l))) {
+    const viz = lines[0].match(/^::viz ([\w-]+)::$/);
+    if (viz) {
+      html.push(loadViz(viz[1]));
+    } else if (lines.every((l) => /^[-*] /.test(l))) {
       html.push('<ul>' + lines.map((l) => `<li>${inline(l.slice(2))}</li>`).join('') + '</ul>');
     } else if (lines.every((l) => /^\d+\. /.test(l))) {
       html.push('<ol>' + lines.map((l) => `<li>${inline(l.replace(/^\d+\. /, ''))}</li>`).join('') + '</ol>');
@@ -143,9 +157,16 @@ function slugify(s) {
   return s.toLowerCase().replace(/\(.*?\)/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-function sectionShell(id, title, chips, innerHtml) {
+let chapterCounter = 0;
+
+function sectionShell(id, title, chips, innerHtml, { kicker, takeaway } = {}) {
+  const num = String(++chapterCounter).padStart(2, '0');
+  const kickerHtml = kicker ? `<p class="kicker"><span class="chapter">${num}</span> ${escapeHtml(kicker)}</p>` : '';
+  const takeawayHtml = takeaway ? `<p class="takeaway">${inline(takeaway)}</p>` : '';
   return `<section class="block" id="${id}">
+${kickerHtml}
 <div class="section-head"><h2>${escapeHtml(title)}</h2>${chips.join('')}</div>
+${takeawayHtml}
 ${innerHtml}
 </section>`;
 }
@@ -156,7 +177,7 @@ function updatedChip(iso) {
 
 function renderProse(sec, extraChips = []) {
   const chips = [...extraChips, updatedChip(sec.meta.lastUpdated)];
-  return sectionShell(sec.id, sec.meta.title, chips, `<div class="prose">${markdown(sec.body)}</div>`);
+  return sectionShell(sec.id, sec.meta.title, chips, `<div class="prose">${markdown(sec.body)}</div>`, sec.meta);
 }
 
 function renderGlossary(site, glossary) {
@@ -179,17 +200,23 @@ function renderGlossary(site, glossary) {
 </details>`;
   });
   const intro = `<p class="prose">Every AI word you're likely to run into, in plain language. Start with Tier 1 — the other tiers can wait until you need them.</p>`;
+  const extras = (glossary.viz ?? []).map(loadViz).join('\n');
   const tools = `<div class="glossary-tools"><button type="button" id="toggle-all-terms">Expand all 3 tiers</button></div>`;
-  return sectionShell('glossary', 'Key terms, without the jargon', [updatedChip(glossary.lastUpdated)], intro + tiers.join('\n') + tools);
+  return sectionShell('glossary', 'Key terms, without the jargon', [updatedChip(glossary.lastUpdated)], intro + tiers.join('\n') + extras + tools, glossary);
 }
+
+// Fixed categorical order (validated with the dataviz palette checker); color
+// follows the card's position, never gets reassigned.
+const BADGE_COLORS = ['#0f8a76', '#b45309', '#a13d63', '#5b5bd6', '#2f6db3'];
 
 function renderLandscape(landscape) {
   const cards = landscape.cards
-    .map((c) => {
+    .map((c, i) => {
       const sources = c.sources.map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${escapeHtml(s.label)}</a>`).join(' · ');
       const goodFor = (c.goodFor ?? []).map((g) => `<li>${inline(g)}</li>`).join('');
-      return `<article class="card">
-<div class="card-head"><h3>${escapeHtml(c.name)}</h3><span class="company">by ${escapeHtml(c.company)}</span></div>
+      const badge = `<span class="badge" aria-hidden="true" style="--badge:${BADGE_COLORS[i % BADGE_COLORS.length]}">${escapeHtml(c.name[0])}</span>`;
+      return `<article class="card" id="tool-${slugify(c.name)}">
+<div class="card-head">${badge}<h3>${escapeHtml(c.name)}</h3><span class="company">by ${escapeHtml(c.company)}</span></div>
 <p class="desc">${inline(c.plainDescription)}</p>
 ${goodFor ? `<ul>${goodFor}</ul>` : ''}
 ${c.freeAccess ? `<p class="free">${inline(c.freeAccess)}</p>` : ''}
@@ -199,7 +226,8 @@ ${c.freeAccess ? `<p class="free">${inline(c.freeAccess)}</p>` : ''}
     .join('\n');
   const newest = landscape.cards.map((c) => c.lastUpdated).sort().at(-1);
   const intro = landscape.intro ? `<p class="prose">${inline(landscape.intro)}</p>` : '';
-  return sectionShell('landscape', "Today's tools, in plain terms", [updatedChip(newest)], `${intro}<div class="cards">${cards}</div>`);
+  const extras = (landscape.viz ?? []).map(loadViz).join('\n');
+  return sectionShell('landscape', "Today's tools, in plain terms", [updatedChip(newest)], `${intro}${extras}<div class="cards">${cards}</div>`, landscape);
 }
 
 // ---------- main ----------
@@ -244,15 +272,32 @@ const footerLinks = [
   .join(' · ');
 
 const template = readFileSync(join(ROOT, 'templates', 'page.html'), 'utf8');
-const css = readFileSync(join(ROOT, 'templates', 'styles.css'), 'utf8');
 const js = readFileSync(join(ROOT, 'templates', 'app.js'), 'utf8');
+
+// Self-hosted fonts (OFL-licensed), inlined so the page stays one self-contained file.
+function fontFace(family, file, weight) {
+  const b64 = readFileSync(join(ROOT, 'templates', 'fonts', file)).toString('base64');
+  return `@font-face{font-family:"${family}";font-style:normal;font-weight:${weight};font-display:swap;src:url(data:font/woff2;base64,${b64}) format("woff2")}`;
+}
+const css =
+  fontFace('Archivo Black', 'archivo-black-latin.woff2', 400) +
+  '\n' +
+  fontFace('Caveat', 'caveat-latin.woff2', 600) +
+  '\n' +
+  readFileSync(join(ROOT, 'templates', 'styles.css'), 'utf8');
 
 const html = template
   .replaceAll('{{LANG}}', site.lang)
   .replaceAll('{{TITLE}}', `${site.name} — ${site.tagline}`)
   .replaceAll('{{DESCRIPTION}}', escapeHtml(site.description))
   .replaceAll('{{SITE_NAME}}', escapeHtml(site.name))
-  .replaceAll('{{TAGLINE}}', escapeHtml(site.tagline))
+  .replaceAll(
+    '{{TAGLINE}}',
+    site.taglineMark && site.tagline.includes(site.taglineMark)
+      ? escapeHtml(site.tagline).replace(escapeHtml(site.taglineMark), `<span class="u-marker">${escapeHtml(site.taglineMark)}</span>`)
+      : escapeHtml(site.tagline)
+  )
+  .replaceAll('{{HAND_NOTE}}', escapeHtml(site.handNote ?? ''))
   .replaceAll('{{NAV}}', nav)
   .replaceAll('{{SECTIONS}}', rendered)
   .replaceAll('{{FOOTER_TEXT}}', escapeHtml(site.footer))

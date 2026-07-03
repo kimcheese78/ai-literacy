@@ -1,0 +1,47 @@
+<figure class="viz" id="quiz">
+<p class="viz-kicker">30-second matchmaker</p>
+<div id="quiz-live" hidden>
+  <p class="quiz-q" id="quiz-q"></p>
+  <div class="quiz-opts" id="quiz-opts"></div>
+  <div class="quiz-result" id="quiz-result">
+    <p class="verdict" id="quiz-verdict"></p>
+    <p id="quiz-reason"></p>
+    <button type="button" class="quiz-reset" id="quiz-reset">start over</button>
+  </div>
+</div>
+<div id="quiz-static">
+  <p class="quiz-q">Which one should you try first?</p>
+  <p>Live in Gmail and Google Docs → <strong>Gemini</strong> · Office at work → <strong>Copilot</strong> · want research with checkable sources → <strong>Perplexity</strong> · mostly writing and thinking → <strong>Claude</strong> · just want to see what the fuss is about → <strong>ChatGPT</strong></p>
+</div>
+<p class="viz-caption">All five have free versions, and none of these links earn us anything. This is a starting point, not a marriage.</p>
+</figure>
+<script type="application/json" id="quiz-data">
+{
+  "start": "q1",
+  "nodes": {
+    "q1": {
+      "q": "Be honest — where does your screen time actually live?",
+      "opts": [
+        ["Google-land: Gmail, Docs, an Android phone", "gemini"],
+        ["Microsoft Office, usually at work", "copilot"],
+        ["Neither, really", "q2"]
+      ]
+    },
+    "q2": {
+      "q": "What would you actually use an AI for first?",
+      "opts": [
+        ["Researching things — with sources I can check", "perplexity"],
+        ["Writing, editing, thinking things through", "claude"],
+        ["No idea yet — a bit of everything", "chatgpt"]
+      ]
+    }
+  },
+  "results": {
+    "gemini": { "name": "Gemini", "why": "It's already inside the tools you use every day — summarizing your Gmail threads is the gentlest possible first step." },
+    "copilot": { "name": "Copilot", "why": "It lives where your work lives. Ask it to draft an email in Outlook and you'll get it immediately." },
+    "perplexity": { "name": "Perplexity", "why": "Every answer comes with its sources attached — the perfect training wheels for healthy AI skepticism." },
+    "claude": { "name": "Claude", "why": "It's known for natural writing and careful reasoning — hand it something long and messy and watch." },
+    "chatgpt": { "name": "ChatGPT", "why": "The most popular all-rounder. Whatever you're curious about, it's a fine place to find out." }
+  }
+}
+</script>

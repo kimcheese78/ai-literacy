@@ -1,0 +1,24 @@
+<figure class="viz" id="nw">
+<p class="viz-kicker">Try it — be the AI for ten seconds</p>
+<p class="nw-sentence" id="nw-sentence">The cat sat on the <span class="nw-blank" aria-hidden="true"></span></p>
+<div class="nw-bars" id="nw-bars" role="group" aria-label="Predicted next words — tap one to choose it">
+  <button class="nw-bar" type="button"><span class="word">mat</span><span class="track"><span class="fill" style="width:62%"></span></span><span class="pct">62%</span></button>
+  <button class="nw-bar" type="button"><span class="word">sofa</span><span class="track"><span class="fill" style="width:21%"></span></span><span class="pct">21%</span></button>
+  <button class="nw-bar" type="button"><span class="word">floor</span><span class="track"><span class="fill" style="width:9%"></span></span><span class="pct">9%</span></button>
+  <button class="nw-bar" type="button"><span class="word">moon</span><span class="track"><span class="fill" style="width:2%"></span></span><span class="pct">2%</span></button>
+</div>
+<p class="nw-done" id="nw-done" hidden></p>
+<p class="viz-caption">Numbers are illustrative. A real model weighs <em>every word it knows</em>, thousands of times per reply — and that's the entire trick: <strong>guess the next word, repeat</strong>.</p>
+</figure>
+<script type="application/json" id="nw-data">
+{
+  "base": "The cat sat on the",
+  "steps": [
+    [["mat", 62], ["sofa", 21], ["floor", 9], ["moon", 2]],
+    [["and", 44], ["all", 23], ["quietly", 18], ["because", 8]],
+    [["purred", 51], ["slept", 24], ["waited", 12], ["plotted", 9]]
+  ],
+  "done": "You just generated a sentence the way an LLM does — one likely word at a time. No understanding required, and yet…",
+  "reset": "Start over"
+}
+</script>

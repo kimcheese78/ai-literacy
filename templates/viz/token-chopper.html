@@ -1,0 +1,15 @@
+<figure class="viz" id="chop">
+<p class="viz-kicker">What the AI actually sees</p>
+<p class="chop-line" id="chop-line"><span class="tk" style="--tk:#0f8a76">str</span><span class="tk" style="--tk:#b45309">aw</span><span class="tk" style="--tk:#a13d63">berry</span></p>
+<p class="chop-count" id="chop-count">1 word → <strong>3 tokens</strong> — which is why AIs famously miscounted the r's in "strawberry": they never saw the letters, only the chunks.</p>
+<button type="button" id="chop-next" hidden>Another example</button>
+<p class="viz-caption">Splits are illustrative — every model chops a little differently. Prices and limits are counted in these chunks, not in words.</p>
+</figure>
+<script type="application/json" id="chop-data">
+[
+  { "tokens": ["str", "aw", "berry"], "note": "1 word → <strong>3 tokens</strong> — which is why AIs famously miscounted the r's in \"strawberry\": they never saw the letters, only the chunks." },
+  { "tokens": ["The", " cat", " sat", " on", " the", " mat"], "note": "Common words → <strong>1 token each</strong>. Ordinary English is cheap." },
+  { "tokens": ["Chat", "G", "PT"], "note": "Unusual names get shredded: 1 name → <strong>3 tokens</strong>." },
+  { "tokens": ["un", "believ", "able", "!"], "note": "Long words become familiar pieces: 1 word → <strong>4 tokens</strong>." }
+]
+</script>

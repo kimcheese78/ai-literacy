@@ -1,6 +1,8 @@
 {
   "name": "AI, Actually",
   "tagline": "A plain-language guide to AI you can actually trust.",
+  "taglineMark": "actually trust",
+  "handNote": "written by a human, checked monthly, receipts attached ↓",
   "description": "Start here. One page that explains AI, the key terms, and today's tools — in plain language, with every claim sourced and dated. No signup, no jargon, no hype.",
   "lang": "en",
   "url": "https://kimcheese78.github.io/ai-literacy/",

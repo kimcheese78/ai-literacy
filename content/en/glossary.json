@@ -1,5 +1,8 @@
 {
-  "lastUpdated": "2026-07-03",
+  "lastUpdated": "2026-07-04",
+  "kicker": "The vocabulary",
+  "takeaway": "Learn ==10 words== and every AI headline starts making sense.",
+  "viz": ["token-chopper", "temperature"],
   "terms": [
     {
       "term": "AI (Artificial Intelligence)",
