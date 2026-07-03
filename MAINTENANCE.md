@@ -26,6 +26,12 @@ Copy, adapt, paste:
 - "Add a glossary term for 'world model' in tier 2, same plain-language style as the others, with a credible learn-more link."
 - "Run `node check-links.mjs` and replace any dead source links with working equivalents."
 - "Quarterly review: read every prose section as a skeptical beginner and flag anything stale, jargony, or unclear before editing."
+- "The next-word widget examples feel stale — refresh the canned data in `templates/viz/next-word.html` (keep the same JSON shape)."
+
+The interactive widgets (`templates/viz/*.html` + logic in `templates/app.js`)
+run entirely on canned example data — no API calls, nothing to pay for, nothing
+to break. If a widget's numbers or examples age badly, edit the JSON block at
+the bottom of its viz file.
 
 ## Commands
 

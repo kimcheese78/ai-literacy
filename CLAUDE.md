@@ -26,8 +26,12 @@ public edit history, one accountable curator. Nothing here may compromise that.
    it's defined on the page (the glossary probably already has it — link with
    a `#term-<slug>` anchor if needed). Prefer analogies over precision.
 4. The markdown subset in `build.mjs` supports: paragraphs, `**bold**`,
-   `*em*`, `` `code` ``, `[links](url)`, `-`/`1.` lists, `###` headings.
-   Nothing else — don't write fancier markdown in sections.
+   `*em*`, `` `code` ``, `[links](url)`, `-`/`1.` lists, `###` headings,
+   `==highlighted==` text (renders as a marker highlight — use sparingly,
+   one or two per section), and `::viz name::` on its own line to embed
+   `templates/viz/<name>.html` (interactive widgets/diagrams). Nothing else.
+   Sections and the glossary/landscape JSON take optional `kicker` and
+   `takeaway` fields (the big poster headline per section).
 5. After any content change: `node build.mjs` (must pass), and
    `node check-links.mjs` if links changed.
 6. Write style: short sentences, scannable from bold text alone, warm but
