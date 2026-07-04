@@ -16,7 +16,7 @@
   --serif: "Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --display: "Archivo Black", var(--sans);
-  --underline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M3 9 C 25 4, 48 8, 70 6 S 110 4, 117 7' fill='none' stroke='%230f8a76' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
+  --hilite: #c5e8d5;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -60,11 +60,12 @@ body {
   text-transform: none;
 }
 .tagline .u-marker {
-  background-image: var(--underline);
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 100% .22em;
-  padding-bottom: .18em;
+  background: linear-gradient(103deg, transparent 1%, var(--hilite) 4%, var(--hilite) 96%, transparent 99%);
+  padding: 0 .1em;
+  margin: 0 -.05em;
+  border-radius: .1em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .promise { color: var(--muted); margin: 0 0 .75rem; max-width: 36rem; }
 .hand-note {
@@ -137,14 +138,12 @@ section.block {
   margin: 1rem 0 1.25rem;
   letter-spacing: -0.01em;
 }
-/* The one and only marker treatment: a hand-drawn underline */
+/* The one and only marker treatment: a light-green highlighter swipe */
 mark {
-  background-color: transparent;
-  background-image: var(--underline);
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 100% .2em;
-  padding-bottom: .12em;
+  background: linear-gradient(103deg, transparent 1%, var(--hilite) 5%, var(--hilite) 95%, transparent 99%);
+  padding: .06em .18em;
+  margin: 0 -.08em;
+  border-radius: .15em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   color: inherit;
