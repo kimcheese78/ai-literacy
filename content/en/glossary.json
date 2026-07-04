@@ -7,204 +7,252 @@
     {
       "term": "AI (Artificial Intelligence)",
       "tier": 1,
+      "group": "The big picture",
       "definition": "Software that can do things we usually think of as needing human intelligence — understanding language, recognizing images, making decisions. It's not a robot brain; it's very advanced pattern-matching.",
       "learnMore": { "label": "Cloudflare: What is AI?", "url": "https://www.cloudflare.com/learning/ai/what-is-artificial-intelligence/" }
     },
     {
       "term": "Machine Learning",
       "tier": 1,
+      "group": "The big picture",
       "definition": "Building software by showing it lots of examples instead of writing exact rules. Like teaching a child what a cat is by showing pictures, not by describing whiskers and ears.",
       "learnMore": { "label": "IBM: What is machine learning?", "url": "https://www.ibm.com/think/topics/machine-learning" }
     },
     {
-      "term": "LLM (Large Language Model)",
-      "tier": 1,
-      "definition": "The technology behind chatbots like ChatGPT and Claude. It has 'read' an enormous amount of text and learned to predict which words come next — which turns out to be enough to write, summarize, translate, and answer questions.",
-      "learnMore": { "label": "Cloudflare: What is an LLM?", "url": "https://www.cloudflare.com/learning/ai/what-is-large-language-model/" }
-    },
-    {
-      "term": "Prompt",
-      "tier": 1,
-      "definition": "Whatever you type to an AI — your question or instruction. Specific prompts with context get better answers, just like requests to a helpful colleague."
-    },
-    {
-      "term": "Model",
-      "tier": 1,
-      "definition": "The 'brain' itself — the program that comes out of training. Companies release models with names and versions (GPT-5, Claude, Gemini) the way carmakers release car models."
-    },
-    {
-      "term": "Token",
-      "tier": 1,
-      "definition": "The small chunks of text an AI reads and writes — usually a word or piece of a word ('strawberry' might be two or three tokens). AI limits and prices are usually counted in tokens.",
-      "learnMore": { "label": "OpenAI: What are tokens?", "url": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them" }
-    },
-    {
-      "term": "Chatbot",
-      "tier": 1,
-      "definition": "An app that lets you talk with an AI in a back-and-forth conversation, like texting. ChatGPT, Claude, and Gemini are chatbots built on top of large language models."
-    },
-    {
-      "term": "Training data",
-      "tier": 1,
-      "definition": "The examples an AI learned from — for chatbots, huge amounts of text from books, websites, and articles. An AI can only be as good (or as biased) as what it learned from."
-    },
-    {
-      "term": "Hallucination",
-      "tier": 1,
-      "definition": "When an AI confidently states something false — a made-up fact, quote, or source. It isn't lying on purpose; it's producing plausible-sounding words. Always double-check facts that matter.",
-      "learnMore": { "label": "IBM: What are AI hallucinations?", "url": "https://www.ibm.com/think/topics/ai-hallucinations" }
-    },
-    {
       "term": "Generative AI",
       "tier": 1,
+      "group": "The big picture",
       "definition": "AI that creates new things — text, images, music, video — rather than just sorting or labeling existing ones. ChatGPT (text) and Midjourney (images) are generative AI.",
       "learnMore": { "label": "Cloudflare: What is generative AI?", "url": "https://www.cloudflare.com/learning/ai/what-is-generative-ai/" }
     },
 
     {
-      "term": "AI Agent",
-      "tier": 2,
-      "definition": "An AI that doesn't just answer questions — it takes actions to finish a task: browsing the web, filling in forms, writing and running code, often across many steps with little supervision.",
-      "learnMore": { "label": "Anthropic: Building effective agents", "url": "https://www.anthropic.com/research/building-effective-agents" }
+      "term": "LLM (Large Language Model)",
+      "tier": 1,
+      "group": "What powers a chatbot",
+      "definition": "The technology behind chatbots like ChatGPT and Claude. It has 'read' an enormous amount of text and learned to predict which words come next — which turns out to be enough to write, summarize, translate, and answer questions.",
+      "learnMore": { "label": "Cloudflare: What is an LLM?", "url": "https://www.cloudflare.com/learning/ai/what-is-large-language-model/" }
     },
     {
-      "term": "Context window",
-      "tier": 2,
-      "definition": "How much a chatbot can 'keep in mind' at once — your conversation plus any documents you've shared. When a chat gets very long, the oldest parts can fall out of its working memory.",
-      "learnMore": { "label": "IBM: What is a context window?", "url": "https://www.ibm.com/think/topics/context-window" }
+      "term": "Model",
+      "tier": 1,
+      "group": "What powers a chatbot",
+      "definition": "The 'brain' itself — the program that comes out of training. Companies release models with names and versions (GPT-5, Claude, Gemini) the way carmakers release car models."
     },
     {
-      "term": "Fine-tuning",
-      "tier": 2,
-      "definition": "Giving an already-trained model extra training on specific examples so it gets better at one particular job — like a general doctor going on to specialize."
+      "term": "Training data",
+      "tier": 1,
+      "group": "What powers a chatbot",
+      "definition": "The examples an AI learned from — for chatbots, huge amounts of text from books, websites, and articles. An AI can only be as good (or as biased) as what it learned from."
     },
     {
-      "term": "RAG (Retrieval-Augmented Generation)",
-      "tier": 2,
-      "definition": "A technique where the AI looks things up in a chosen set of documents before answering — an open-book exam instead of answering from memory. It makes answers more accurate and easier to verify.",
-      "learnMore": { "label": "IBM: What is RAG?", "url": "https://www.ibm.com/think/topics/retrieval-augmented-generation" }
+      "term": "Token",
+      "tier": 1,
+      "group": "What powers a chatbot",
+      "definition": "The small chunks of text an AI reads and writes — usually a word or piece of a word ('strawberry' might be two or three tokens). AI limits and prices are usually counted in tokens.",
+      "learnMore": { "label": "OpenAI: What are tokens?", "url": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them" }
     },
+
+    {
+      "term": "Chatbot",
+      "tier": 1,
+      "group": "Using it",
+      "definition": "An app that lets you talk with an AI in a back-and-forth conversation, like texting. ChatGPT, Claude, and Gemini are chatbots built on top of large language models."
+    },
+    {
+      "term": "Prompt",
+      "tier": 1,
+      "group": "Using it",
+      "definition": "Whatever you type to an AI — your question or instruction. Specific prompts with context get better answers, just like requests to a helpful colleague."
+    },
+
+    {
+      "term": "Hallucination",
+      "tier": 1,
+      "group": "The catch",
+      "definition": "When an AI confidently states something false — a made-up fact, quote, or source. It isn't lying on purpose; it's producing plausible-sounding words. Always double-check facts that matter.",
+      "learnMore": { "label": "IBM: What are AI hallucinations?", "url": "https://www.ibm.com/think/topics/ai-hallucinations" }
+    },
+
     {
       "term": "Multimodal",
       "tier": 2,
+      "group": "What AI can do now",
       "definition": "An AI that handles more than text — it can also look at images, listen to audio, or watch video. Most major chatbots are now multimodal."
     },
     {
-      "term": "Temperature",
+      "term": "Reasoning models (chain-of-thought)",
       "tier": 2,
-      "definition": "A setting that controls how predictable or adventurous an AI's answers are. Low temperature = consistent and safe; high temperature = varied and creative."
+      "group": "What AI can do now",
+      "definition": "Models that 'think out loud' step by step before answering, spending extra time on hard problems. Usually better at math, logic, and planning — but slower.",
+      "learnMore": { "label": "IBM: What is chain-of-thought?", "url": "https://www.ibm.com/think/topics/chain-of-thoughts" }
+    },
+    {
+      "term": "AI Agent",
+      "tier": 2,
+      "group": "What AI can do now",
+      "definition": "An AI that doesn't just answer questions — it takes actions to finish a task: browsing the web, filling in forms, writing and running code, often across many steps with little supervision.",
+      "learnMore": { "label": "Anthropic: Building effective agents", "url": "https://www.anthropic.com/research/building-effective-agents" }
+    },
+
+    {
+      "term": "Context window",
+      "tier": 2,
+      "group": "Behind your conversation",
+      "definition": "How much a chatbot can 'keep in mind' at once — your conversation plus any documents you've shared. When a chat gets very long, the oldest parts can fall out of its working memory.",
+      "viz": "context-window",
+      "learnMore": { "label": "IBM: What is a context window?", "url": "https://www.ibm.com/think/topics/context-window" }
     },
     {
       "term": "System prompt",
       "tier": 2,
+      "group": "Behind your conversation",
       "definition": "Hidden instructions an app gives the AI before you start typing — its job description: 'You are a helpful assistant. Be concise. Don't give medical diagnoses.'"
     },
     {
+      "term": "Temperature",
+      "tier": 2,
+      "group": "Behind your conversation",
+      "definition": "A setting that controls how predictable or adventurous an AI's answers are. Low temperature = consistent and safe; high temperature = varied and creative. (Try the dial below.)"
+    },
+    {
+      "term": "Inference",
+      "tier": 2,
+      "group": "Behind your conversation",
+      "definition": "The moment an AI is actually running to produce your answer — as opposed to training, when it was learning. Every reply you get is 'inference.'"
+    },
+    {
+      "term": "Parameters",
+      "tier": 2,
+      "group": "Behind your conversation",
+      "definition": "The internal dials — millions to trillions of them — that get tuned during training and store what a model has learned. Roughly: more parameters, bigger model."
+    },
+
+    {
       "term": "Prompt engineering",
       "tier": 2,
+      "group": "Getting better answers",
       "definition": "The craft of phrasing requests so the AI gives its best results — being specific, giving examples, and providing background. Less magic than the name suggests: mostly clear communication.",
       "learnMore": { "label": "Anthropic: Prompt engineering guide", "url": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview" }
     },
     {
+      "term": "RAG (Retrieval-Augmented Generation)",
+      "tier": 2,
+      "group": "Getting better answers",
+      "definition": "A technique where the AI looks things up in a chosen set of documents before answering — an open-book exam instead of answering from memory. It makes answers more accurate and easier to verify.",
+      "viz": "rag",
+      "learnMore": { "label": "IBM: What is RAG?", "url": "https://www.ibm.com/think/topics/retrieval-augmented-generation" }
+    },
+    {
+      "term": "Fine-tuning",
+      "tier": 2,
+      "group": "Getting better answers",
+      "definition": "Giving an already-trained model extra training on specific examples so it gets better at one particular job — like a general doctor going on to specialize."
+    },
+
+    {
       "term": "Bias (in AI)",
       "tier": 2,
+      "group": "The debates you'll hear about",
       "definition": "When an AI's answers unfairly favor or disfavor certain groups or viewpoints. It happens because the AI learned from human-written text that carried those same biases.",
       "learnMore": { "label": "IBM: What is AI bias?", "url": "https://www.ibm.com/think/topics/ai-bias" }
     },
     {
       "term": "Guardrails / Safety",
       "tier": 2,
+      "group": "The debates you'll hear about",
       "definition": "The rules and filters built around an AI to prevent harmful output — the reason a chatbot sometimes says 'I can't help with that.'"
-    },
-    {
-      "term": "Inference",
-      "tier": 2,
-      "definition": "The moment an AI is actually running to produce your answer — as opposed to training, when it was learning. Every reply you get is 'inference.'"
-    },
-    {
-      "term": "Parameters",
-      "tier": 2,
-      "definition": "The internal dials — millions to trillions of them — that get tuned during training and store what a model has learned. Roughly: more parameters, bigger model."
     },
     {
       "term": "Open-source vs. closed models",
       "tier": 2,
+      "group": "The debates you'll hear about",
       "definition": "Open(-weight) models, like Meta's Llama, can be downloaded and run by anyone. Closed models, like GPT-5 or Claude, can only be used through the company's own apps and services."
-    },
-    {
-      "term": "Reasoning models (chain-of-thought)",
-      "tier": 2,
-      "definition": "Models that 'think out loud' step by step before answering, spending extra time on hard problems. Usually better at math, logic, and planning — but slower.",
-      "learnMore": { "label": "IBM: What is chain-of-thought?", "url": "https://www.ibm.com/think/topics/chain-of-thoughts" }
     },
 
     {
       "term": "API key",
       "tier": 3,
+      "group": "Plugging AI into apps",
       "definition": "A password that lets a program (rather than a person) use an AI service. It's how developers plug AI into their own apps — and how the usage gets billed."
-    },
-    {
-      "term": "MCP (Model Context Protocol)",
-      "tier": 3,
-      "definition": "An open standard, started by Anthropic, that lets AI assistants connect to outside tools and data — files, email, calendars — through one common plug. Think USB-C, but for AI.",
-      "learnMore": { "label": "Official MCP site", "url": "https://modelcontextprotocol.io/" }
     },
     {
       "term": "Function calling / Tool use",
       "tier": 3,
+      "group": "Plugging AI into apps",
       "definition": "Letting an AI use tools mid-answer: it decides 'I should search the web' or 'I should run this calculation,' does it, and works the result into its reply.",
       "learnMore": { "label": "Anthropic: Tool use docs", "url": "https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview" }
     },
     {
+      "term": "MCP (Model Context Protocol)",
+      "tier": 3,
+      "group": "Plugging AI into apps",
+      "definition": "An open standard, started by Anthropic, that lets AI assistants connect to outside tools and data — files, email, calendars — through one common plug. Think USB-C, but for AI.",
+      "learnMore": { "label": "Official MCP site", "url": "https://modelcontextprotocol.io/" }
+    },
+    {
+      "term": "Rate limits",
+      "tier": 3,
+      "group": "Plugging AI into apps",
+      "definition": "Caps on how often you or your app can call an AI service in a given time window — the reason heavy use sometimes hits a 'please try again later.'"
+    },
+    {
+      "term": "Latency",
+      "tier": 3,
+      "group": "Plugging AI into apps",
+      "definition": "How long you wait for the AI's answer. Bigger and 'reasoning' models are usually smarter but slower — a real trade-off when building apps."
+    },
+    {
+      "term": "Token cost / pricing",
+      "tier": 3,
+      "group": "Plugging AI into apps",
+      "definition": "AI services charge per token, usually with different rates for what you send in and what the model writes back — like a taxi meter for text."
+    },
+
+    {
       "term": "Embeddings",
       "tier": 3,
+      "group": "How AI-powered search works",
       "definition": "A way of turning text into lists of numbers that capture meaning, so a computer can tell that 'dog' and 'puppy' are related. The foundation of AI-powered search.",
       "learnMore": { "label": "Cloudflare: What are embeddings?", "url": "https://www.cloudflare.com/learning/ai/what-are-embeddings/" }
     },
     {
       "term": "Vector database",
       "tier": 3,
+      "group": "How AI-powered search works",
       "definition": "A database built to store and search embeddings — so you can ask 'find documents that mean something similar to this' instead of matching exact words."
     },
+
     {
       "term": "Fine-tuning vs. prompt engineering",
       "tier": 3,
+      "group": "Choosing a building strategy",
       "definition": "Two ways to get better answers. Prompt engineering changes what you ask — cheap and instant. Fine-tuning changes the model itself — expensive, for repeated specialized tasks. Try prompting first."
     },
     {
       "term": "Context engineering",
       "tier": 3,
+      "group": "Choosing a building strategy",
       "definition": "Designing everything the model sees — instructions, documents, tool results, conversation history — not just the question. The successor to prompt engineering for people building AI apps.",
       "learnMore": { "label": "Anthropic: Effective context engineering", "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" }
     },
     {
       "term": "Orchestration",
       "tier": 3,
+      "group": "Choosing a building strategy",
       "definition": "The 'conductor' code around an AI app: sending prompts, calling tools, chaining several AI steps together, and handling errors along the way."
     },
-    {
-      "term": "Rate limits",
-      "tier": 3,
-      "definition": "Caps on how often you or your app can call an AI service in a given time window — the reason heavy use sometimes hits a 'please try again later.'"
-    },
-    {
-      "term": "Latency",
-      "tier": 3,
-      "definition": "How long you wait for the AI's answer. Bigger and 'reasoning' models are usually smarter but slower — a real trade-off when building apps."
-    },
-    {
-      "term": "Token cost / pricing",
-      "tier": 3,
-      "definition": "AI services charge per token, usually with different rates for what you send in and what the model writes back — like a taxi meter for text."
-    },
+
     {
       "term": "Model weights",
       "tier": 3,
+      "group": "The model itself",
       "definition": "The actual numbers inside a trained model — the values of all its parameters. 'Releasing the weights' means letting anyone download and run the model themselves."
     },
     {
       "term": "Local vs. cloud-hosted models",
       "tier": 3,
+      "group": "The model itself",
       "definition": "Cloud models run on the company's servers, so your data travels to them. Local models run on your own computer — private and offline-capable, but usually less powerful."
     }
   ]

@@ -183,14 +183,18 @@ function renderProse(sec, extraChips = []) {
 function renderGlossary(site, glossary) {
   const tiers = site.glossaryTiers.map((tierDef) => {
     const terms = glossary.terms.filter((t) => t.tier === tierDef.tier);
+    let currentGroup = null;
     const items = terms
       .map((t) => {
         const more = t.learnMore
           ? ` <span class="more">· <a href="${t.learnMore.url}" target="_blank" rel="noopener">${escapeHtml(t.learnMore.label)}</a></span>`
           : '';
-        return `<div class="term" id="term-${slugify(t.term)}">
-<h3>${escapeHtml(t.term)}</h3>
-<p>${inline(t.definition)}${more}</p>
+        const heading = t.group && t.group !== currentGroup ? `<h3 class="term-group">${escapeHtml(t.group)}</h3>\n` : '';
+        currentGroup = t.group ?? currentGroup;
+        const viz = t.viz ? `\n${loadViz(t.viz)}` : '';
+        return `${heading}<div class="term" id="term-${slugify(t.term)}">
+<h4>${escapeHtml(t.term)}</h4>
+<p>${inline(t.definition)}${more}</p>${viz}
 </div>`;
       })
       .join('\n');
@@ -281,8 +285,6 @@ function fontFace(family, file, weight) {
 }
 const css =
   fontFace('Archivo Black', 'archivo-black-latin.woff2', 400) +
-  '\n' +
-  fontFace('Caveat', 'caveat-latin.woff2', 600) +
   '\n' +
   readFileSync(join(ROOT, 'templates', 'styles.css'), 'utf8');
 

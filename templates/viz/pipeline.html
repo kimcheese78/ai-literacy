@@ -1,0 +1,23 @@
+<figure class="viz">
+<p class="viz-kicker">How a chatbot gets made</p>
+<div class="diagram">
+  <div class="d-box">
+    <svg class="d-icon" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="20" height="24" rx="2"/><rect x="9" y="4" width="20" height="24" rx="2" fill="#faf7f1"/><line x1="13" y1="10" x2="25" y2="10"/><line x1="13" y1="15" x2="25" y2="15"/><line x1="13" y1="20" x2="21" y2="20"/></svg>
+    <span><span class="d-title">Step 1 — It reads almost everything</span>
+    <span class="d-sub">Books, websites, articles, code: the training data. More than any human could read in a thousand lifetimes.</span></span>
+  </div>
+  <div class="d-arrow">months of training on warehouse-sized computers</div>
+  <div class="d-box">
+    <svg class="d-icon" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="5" x2="7" y2="29"/><circle cx="7" cy="12" r="3" fill="#faf7f1"/><line x1="17" y1="5" x2="17" y2="29"/><circle cx="17" cy="22" r="3" fill="#faf7f1"/><line x1="27" y1="5" x2="27" y2="29"/><circle cx="27" cy="9" r="3" fill="#faf7f1"/></svg>
+    <span><span class="d-title">Step 2 — Patterns get stored in "the model"</span>
+    <span class="d-sub">Billions of tiny dials (the parameters), each nudged during training until the predictions come out right.</span></span>
+  </div>
+  <div class="d-arrow">you type a prompt</div>
+  <div class="d-box">
+    <svg class="d-icon" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 h26 v18 h-16 l-6 6 v-6 h-4 z"/><circle cx="12" cy="15" r="1.4" fill="currentColor"/><circle cx="17" cy="15" r="1.4" fill="currentColor"/><circle cx="22" cy="15" r="1.4" fill="currentColor"/></svg>
+    <span><span class="d-title">Step 3 — It predicts your reply</span>
+    <span class="d-sub">One token at a time, exactly like the game you just played — just unimaginably faster.</span></span>
+  </div>
+</div>
+<p class="viz-caption">Training happens once, in advance (that's why models have a "knowledge cutoff"). Answering you — <strong>inference</strong> — happens live, every time.</p>
+</figure>

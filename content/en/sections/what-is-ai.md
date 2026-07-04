@@ -16,6 +16,10 @@ Sounds too simple to matter? Try doing the job yourself:
 
 **Here's the one analogy to keep:** a chatbot is **your phone's autocomplete, raised to a superpower**. Do what you just did — but with every word ever written, thousands of times a second — and the result can draft emails, summarize contracts, explain physics, and write working code.
 
+**Where does that superpower come from?** Three steps:
+
+::viz pipeline::
+
 That one idea also explains the two things beginners most need to know:
 
 - **Why it's so useful:** it has "read" more than any human ever could, and it's endlessly patient. Great for drafting, summarizing, explaining, translating, brainstorming.
