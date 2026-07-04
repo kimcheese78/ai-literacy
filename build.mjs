@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Zero-dependency static site builder for AI, Actually.
+// Zero-dependency static site builder for AI, Explained.
 // Reads content/<lang>/, validates it (trust fields are mandatory), and writes site/index.html.
 // Usage: node build.mjs [--lang en]
 

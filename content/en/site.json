@@ -1,9 +1,9 @@
 {
-  "name": "AI, Actually",
-  "tagline": "Everything you actually need to know about AI — on one page.",
-  "taglineMark": "actually need to know",
+  "name": "AI, Explained",
+  "tagline": "Make sense of AI — all on one page.",
+  "taglineMark": "one page",
   "handNote": "Written by a human · Checked monthly · Every claim sourced",
-  "description": "Everything you actually need to know about AI, on one page: what it is, the key terms, today's tools, and what to do first — in plain language, with every claim sourced and dated.",
+  "description": "Make sense of AI on one page: what it is, the key terms, today's tools, and what to do first — in plain language, with every claim sourced and dated.",
   "lang": "en",
   "url": "https://kimcheese78.github.io/ai-literacy/",
   "repoUrl": "https://github.com/kimcheese78/ai-literacy",
@@ -16,7 +16,7 @@
     { "id": "go-deeper", "label": "Go deeper" }
   ],
   "glossaryTiers": [
-    { "tier": 1, "title": "Must-know basics", "subtitle": "Ten words that unlock every AI conversation. Start here.", "openByDefault": true },
+    { "tier": 1, "title": "Must-know basics", "subtitle": "Twelve words that unlock every AI conversation. Start here.", "openByDefault": true },
     { "tier": 2, "title": "Once you're actually using AI tools", "subtitle": "The words you'll meet after your first week of real use.", "openByDefault": false },
     { "tier": 3, "title": "Once you're building or going technical", "subtitle": "For the curious — you don't need these to use AI well.", "openByDefault": false }
   ],

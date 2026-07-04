@@ -1,4 +1,4 @@
-# Maintaining AI, Actually
+# Maintaining AI, Explained
 
 The whole site is content files + one build script. You never edit HTML.
 Updates flow through Claude Code: describe what changed, let it edit the

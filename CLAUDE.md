@@ -1,4 +1,4 @@
-# AI, Actually — plain-language AI reference site
+# AI, Explained — plain-language AI reference site
 
 A single-page static site that explains AI to non-technical people. Its whole
 value proposition is **trust**: every claim sourced, every section dated,

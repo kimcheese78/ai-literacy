@@ -1,5 +1,5 @@
 ---
-title: What is AI, actually?
+title: What is AI?
 kicker: The basics
 takeaway: AI doesn't ==know== anything. It ==predicts==.
 lastUpdated: 2026-07-04

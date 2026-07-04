@@ -1,6 +1,6 @@
-# AI, Actually
+# AI, Explained
 
-**A plain-language guide to AI you can actually trust.**
+**Make sense of AI — all on one page.**
 Live at: https://kimcheese78.github.io/ai-literacy/
 
 One page that gives a complete beginner everything they need to understand AI:
