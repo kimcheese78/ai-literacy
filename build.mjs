@@ -88,6 +88,17 @@ function validateGlossary(glossary) {
   }
 }
 
+function validatePlatforms(platforms) {
+  if (!platforms) return;
+  for (const co of platforms.companies ?? []) {
+    const label = `platforms company "${co.company ?? '(unnamed)'}"`;
+    requireFields(co, ['company', 'products', 'sources', 'lastUpdated'], label);
+    validateDate(co.lastUpdated, label);
+    for (const p of co.products ?? []) requireFields(p, ['name', 'what'], `${label} product "${p.name ?? '(unnamed)'}"`);
+    for (const s of co.sources ?? []) requireFields(s, ['label', 'url'], `${label} source`);
+  }
+}
+
 function validateLandscape(landscape) {
   if (!landscape) return;
   for (const c of landscape.cards ?? []) {
@@ -234,12 +245,42 @@ ${c.freeAccess ? `<p class="free">${inline(c.freeAccess)}</p>` : ''}
   return sectionShell('landscape', "Today's tools, in plain terms", [updatedChip(newest)], `${intro}${extras}<div class="cards">${cards}</div>`, landscape);
 }
 
+function renderPlatforms(platforms) {
+  const companies = platforms.companies
+    .map((co, i) => {
+      const rows = co.products
+        .map(
+          (p) => `<div class="prow">
+<span class="pname">${escapeHtml(p.name)}${p.tag ? ` <span class="ptag">${escapeHtml(p.tag)}</span>` : ''}</span>
+<span class="pwhat">${inline(p.what)}</span>
+</div>`
+        )
+        .join('\n');
+      const sources = co.sources.map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${escapeHtml(s.label)}</a>`).join(' · ');
+      const models = co.modelsNote ? `<p class="pmodels">${inline(co.modelsNote)}</p>` : '';
+      return `<details class="tier"${i === 0 ? ' open' : ''}>
+<summary>${escapeHtml(co.company)} <span class="count">(${co.products.length} products)</span></summary>
+<div class="terms">
+${models}
+${rows}
+<div class="meta pmeta"><span>Checked ${formatDate(co.lastUpdated)}</span><span>Source: ${sources}</span></div>
+</div>
+</details>`;
+    })
+    .join('\n');
+  const intro = platforms.intro ? `<p class="prose">${inline(platforms.intro)}</p>` : '';
+  const extras = (platforms.viz ?? []).map(loadViz).join('\n');
+  const newest = platforms.companies.map((c) => c.lastUpdated).sort().at(-1);
+  return sectionShell('platforms', 'Same brand, different products', [updatedChip(newest)], intro + extras + companies, platforms);
+}
+
 // ---------- main ----------
 
 const site = loadJSON('site.json');
 const glossary = loadJSON('glossary.json');
 const landscape = loadJSON('landscape.json');
-const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'starter-actions', 'trust', 'go-deeper'];
+const platforms = loadJSON('platforms.json');
+const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'platforms', 'starter-actions', 'trust', 'go-deeper'];
 const proseSections = Object.fromEntries(
   ['what-is-ai', 'starter-actions', 'trust', 'go-deeper'].map((n) => [n, loadSection(n)])
 );
@@ -247,6 +288,7 @@ const proseSections = Object.fromEntries(
 if (site) requireFields(site, ['name', 'tagline', 'description', 'lang', 'nav', 'glossaryTiers', 'footer'], 'site.json');
 validateGlossary(glossary);
 validateLandscape(landscape);
+validatePlatforms(platforms);
 Object.values(proseSections).forEach(validateSection);
 
 if (errors.length) {
@@ -260,6 +302,7 @@ const rendered = sectionOrder
   .map((id) => {
     if (id === 'glossary') return renderGlossary(site, glossary);
     if (id === 'landscape') return renderLandscape(landscape);
+    if (id === 'platforms') return renderPlatforms(platforms);
     const sec = proseSections[id];
     const extra = sec.meta.readingTime ? [`<span class="chip">${escapeHtml(sec.meta.readingTime)}</span>`] : [];
     return renderProse(sec, extra);

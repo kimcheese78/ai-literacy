@@ -11,6 +11,7 @@
     { "id": "what-is-ai", "label": "What is AI?" },
     { "id": "glossary", "label": "Key terms" },
     { "id": "landscape", "label": "Today's tools" },
+    { "id": "platforms", "label": "The name maze" },
     { "id": "starter-actions", "label": "What should I do?" },
     { "id": "trust", "label": "Why trust this?" },
     { "id": "go-deeper", "label": "Go deeper" }

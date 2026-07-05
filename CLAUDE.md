@@ -8,7 +8,7 @@ public edit history, one accountable curator. Nothing here may compromise that.
 
 - `content/en/` is the only place content lives: prose in `sections/*.md`
   (frontmatter + small markdown subset), structured data in `glossary.json`,
-  `landscape.json`, `site.json`.
+  `landscape.json`, `platforms.json`, `site.json`.
 - `node build.mjs` validates content (fails on missing `lastUpdated`/`sources`)
   and writes `site/index.html`. Zero npm dependencies — keep it that way.
 - `node check-links.mjs` verifies every URL in content; 403s are warnings

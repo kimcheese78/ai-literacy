@@ -11,6 +11,7 @@ content files, review the diff, push.
 | What is AI / starter actions / trust / go deeper | `content/en/sections/*.md` | Review quarterly |
 | Key terms (glossary) | `content/en/glossary.json` | Review quarterly |
 | Today's tools (landscape) | `content/en/landscape.json` | Review monthly, or when something big happens |
+| The name maze (platform breakdown) | `content/en/platforms.json` | Review monthly — product lineups change fast |
 | Trending (v1.1, not built yet) | — | Weekly once added |
 
 **Whenever you touch a file, update its `lastUpdated` field to today's date.**

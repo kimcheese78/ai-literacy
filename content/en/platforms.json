@@ -1,0 +1,82 @@
+{
+  "kicker": "The name maze",
+  "takeaway": "One company can sell ==five different AIs==. Here's the map.",
+  "intro": "\"Wait — Claude and Claude Code are different things?\" Yes, and every company does this. Two ideas untangle all of it: each company has models (the engines) and products (the vehicles built around them).",
+  "viz": ["models-vs-products"],
+  "companies": [
+    {
+      "company": "Anthropic",
+      "modelsNote": "Their engines are named Claude Fable, Opus, Sonnet, and Haiku — you pick between them inside the products.",
+      "products": [
+        { "name": "Claude", "what": "The chatbot — on the web, your phone, or desktop. Where everyone starts." },
+        { "name": "Claude Code", "what": "An AI programmer that works inside a developer's terminal and editor — it writes and fixes code by itself. Developers' favorite.", "tag": "for coders" },
+        { "name": "Claude Cowork", "what": "Claude that does hands-on office work — organizing files, drafting documents, working through folders of real work, not just chatting.", "tag": "newer" },
+        { "name": "Claude Design", "what": "Makes polished visual things: slides, one-pagers, prototypes. Early experimental release.", "tag": "preview" },
+        { "name": "Claude API", "what": "The plug that lets companies build Claude into their own apps.", "tag": "for developers" }
+      ],
+      "sources": [
+        { "label": "Product overview", "url": "https://claude.com/product/overview" },
+        { "label": "Claude Design announcement", "url": "https://www.anthropic.com/news/claude-design-anthropic-labs" }
+      ],
+      "lastUpdated": "2026-07-06"
+    },
+    {
+      "company": "OpenAI",
+      "modelsNote": "Their engines are the GPT series (currently the GPT-5 generation, in tiers like Sol, Terra, and Luna).",
+      "products": [
+        { "name": "ChatGPT", "what": "The chatbot — the most-used AI app in the world." },
+        { "name": "Sora", "what": "A separate app for creating AI videos from text descriptions, with a social feed of results." },
+        { "name": "ChatGPT Atlas", "what": "A web browser with ChatGPT built into every page — it can read what you're looking at and act on it." },
+        { "name": "Codex", "what": "Their AI programmer — writes code on its own inside developer tools.", "tag": "for coders" },
+        { "name": "OpenAI API", "what": "The plug for companies building ChatGPT-style features into their own apps.", "tag": "for developers" }
+      ],
+      "sources": [
+        { "label": "ChatGPT overview", "url": "https://openai.com/chatgpt/overview/" },
+        { "label": "GPT-5.6 model family", "url": "https://openai.com/index/previewing-gpt-5-6-sol/" }
+      ],
+      "lastUpdated": "2026-07-06"
+    },
+    {
+      "company": "Google",
+      "modelsNote": "Their engines are the Gemini series (currently Gemini 3.5, in Pro and fast/cheap Flash tiers).",
+      "products": [
+        { "name": "Gemini", "what": "The chatbot — web, app, and built into Android phones." },
+        { "name": "AI Mode in Search", "what": "AI answers inside regular Google Search — the AI many people use without realizing it." },
+        { "name": "Gemini in Gmail & Docs", "what": "The same AI woven into Google's email and documents, where your work already lives." },
+        { "name": "NotebookLM", "what": "Upload your documents and it becomes an expert on them — summaries, Q&A, even podcast-style audio overviews. A quiet fan favorite." },
+        { "name": "AI Studio & Vertex", "what": "The plugs for developers and companies building with Gemini.", "tag": "for developers" }
+      ],
+      "sources": [
+        { "label": "Gemini overview", "url": "https://gemini.google/about/" },
+        { "label": "NotebookLM", "url": "https://notebooklm.google/" }
+      ],
+      "lastUpdated": "2026-07-06"
+    },
+    {
+      "company": "Microsoft",
+      "modelsNote": "Mostly runs other companies' engines (OpenAI's, plus others you can switch between) inside its own products.",
+      "products": [
+        { "name": "Copilot", "what": "The free assistant built into Windows, Edge, and its own app — for everyday questions." },
+        { "name": "Microsoft 365 Copilot", "what": "The paid work version inside Word, Excel, Outlook, and Teams — it can use your company's files and email.", "tag": "workplace" },
+        { "name": "GitHub Copilot", "what": "The original AI programmer, inside code editors — unrelated to the office Copilots despite the name.", "tag": "for coders" }
+      ],
+      "sources": [
+        { "label": "Copilot plan comparison", "url": "https://support.microsoft.com/en-us/topic/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365-cfff4791-694a-4d90-9c9c-1eb3fb28e842" },
+        { "label": "GitHub Copilot", "url": "https://github.com/features/copilot" }
+      ],
+      "lastUpdated": "2026-07-06"
+    },
+    {
+      "company": "Perplexity",
+      "modelsNote": "Builds its products on a mix of engines from other labs, plus its own.",
+      "products": [
+        { "name": "Perplexity", "what": "The answer engine — ask a question, get a direct answer with sources attached." },
+        { "name": "Comet", "what": "A web browser with the assistant built in — it can browse, summarize, and do tasks on pages for you." }
+      ],
+      "sources": [
+        { "label": "Comet", "url": "https://www.perplexity.ai/comet" }
+      ],
+      "lastUpdated": "2026-07-06"
+    }
+  ]
+}

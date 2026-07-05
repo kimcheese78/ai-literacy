@@ -392,6 +392,33 @@ mark {
 }
 .cw-win .cw-label { color: var(--accent-deep); font-weight: 600; }
 
+/* Platform breakdown (same brand, different products) */
+.pmodels {
+  font-size: .88rem; color: var(--muted); font-style: italic;
+  margin: .2rem 0 .3rem; padding-bottom: .5rem;
+  border-bottom: 1px dashed var(--border);
+}
+.prow {
+  display: grid; gap: .15rem;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--card); padding: .7rem .9rem;
+}
+.pname { font-weight: 700; font-size: .98rem; }
+.ptag {
+  font-weight: 600; font-size: .68rem;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent-deep); background: var(--accent-soft);
+  border-radius: 999px; padding: .1rem .55rem;
+  vertical-align: .1em; margin-left: .25rem;
+}
+.pwhat { font-size: .92rem; color: #37444f; }
+.pmeta {
+  display: flex; justify-content: space-between; gap: .5rem; flex-wrap: wrap;
+  font-size: .8rem; color: var(--muted);
+  border-top: 1px dashed var(--border); padding-top: .5rem; margin-top: .2rem;
+}
+.pmeta a { color: var(--accent); }
+
 /* Card monogram badge */
 .badge {
   width: 2rem; height: 2rem; border-radius: 50%;
