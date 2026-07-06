@@ -8,11 +8,14 @@ content files, review the diff, push.
 
 | Section | File(s) | Cadence |
 |---|---|---|
-| What is AI / starter actions / trust / go deeper | `content/en/sections/*.md` | Review quarterly |
+| What is AI / what it's used for | `content/en/sections/*.md` | Review quarterly |
 | Key terms (glossary) | `content/en/glossary.json` | Review quarterly |
 | Today's tools (landscape) | `content/en/landscape.json` | Review monthly, or when something big happens |
 | The name maze (platform breakdown) | `content/en/platforms.json` | Review monthly — product lineups change fast |
 | Trending (v1.1, not built yet) | — | Weekly once added |
+
+Parked content (removed from the page 2026-07-06, kept for future separate
+pages): `content/en/parked/` holds starter-actions, trust, and go-deeper.
 
 **Whenever you touch a file, update its `lastUpdated` field to today's date.**
 The build fails if it's missing; the date is displayed publicly, so it must be honest —

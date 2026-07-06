@@ -280,10 +280,8 @@ const site = loadJSON('site.json');
 const glossary = loadJSON('glossary.json');
 const landscape = loadJSON('landscape.json');
 const platforms = loadJSON('platforms.json');
-const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'platforms', 'starter-actions', 'trust', 'go-deeper'];
-const proseSections = Object.fromEntries(
-  ['what-is-ai', 'starter-actions', 'trust', 'go-deeper'].map((n) => [n, loadSection(n)])
-);
+const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'platforms', 'how-people-use'];
+const proseSections = Object.fromEntries(['what-is-ai', 'how-people-use'].map((n) => [n, loadSection(n)]));
 
 if (site) requireFields(site, ['name', 'tagline', 'description', 'lang', 'nav', 'glossaryTiers', 'footer'], 'site.json');
 validateGlossary(glossary);
