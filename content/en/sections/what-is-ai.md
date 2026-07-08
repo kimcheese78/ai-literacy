@@ -26,3 +26,7 @@ That one idea also explains the two things beginners most need to know:
 - **Why you can't fully trust it:** it predicts *plausible* words, not *verified* facts. Sometimes it confidently makes things up — that's called a **hallucination** (defined below). ==Use it as a brilliant, fast, occasionally-wrong assistant — not as an encyclopedia.==
 
 **And what it is not:** it isn't conscious, it doesn't have goals or feelings, and it isn't a search engine (though many chatbots can now search the web when asked).
+
+Think you could spot AI writing at a glance? Let's find out:
+
+::viz human-or-ai::

@@ -1,0 +1,45 @@
+<figure class="viz" id="hallu">
+<p class="viz-kicker">Guess before you look — real or made up?</p>
+<div class="guess-dots" aria-hidden="true"><span class="guess-dot"></span><span class="guess-dot"></span><span class="guess-dot"></span></div>
+<div class="hallu-round" id="hallu-round">
+  <p class="hallu-q" id="hallu-q"></p>
+  <div class="hallu-bubble"><span class="hallu-bot" aria-hidden="true">AI says</span><p id="hallu-a"></p></div>
+  <div class="hallu-choices" id="hallu-choices" role="group" aria-label="Real or made up?">
+    <button type="button" data-choice="real">Sounds real</button>
+    <button type="button" data-choice="fake">Made up</button>
+  </div>
+  <div class="guess-reveal" id="hallu-reveal" hidden>
+    <p class="guess-verdict" id="hallu-verdict"></p>
+    <p class="guess-explain" id="hallu-explain"></p>
+    <button type="button" id="hallu-next"></button>
+  </div>
+</div>
+<p class="guess-final" id="hallu-final" hidden></p>
+<noscript><p class="guess-explain">(This works best with JavaScript on. Without it: the first and third answers above are invented — no such book or app feature exists. The eclipse one is real, confirmed by <a href="https://science.nasa.gov/eclipses/future-eclipses/eclipse-2024/" target="_blank" rel="noopener">NASA</a>. Confidence alone never tells you which is which — that's the whole point of a hallucination.)</p></noscript>
+<p class="viz-caption">Two of these three are invented for this demo — no such book or app feature exists. The eclipse fact is real (<a href="https://science.nasa.gov/eclipses/future-eclipses/eclipse-2024/" target="_blank" rel="noopener">NASA</a>). Illustrative, not a claim about any real product.</p>
+</figure>
+<script type="application/json" id="hallu-data">
+{
+  "rounds": [
+    {
+      "q": "“Can you recommend a good book about the history of tea?”",
+      "a": "“The Leaf and the Empire” by Dr. Helen Marsh (2014) is a definitive history of the global tea trade.",
+      "real": false,
+      "explain": "Invented. No such book or author exists. Classic hallucination pattern: a plausible title, a realistic author name, a specific year — all fabricated."
+    },
+    {
+      "q": "“Was there a total solar eclipse visible across North America recently?”",
+      "a": "Yes — on April 8, 2024, a total solar eclipse crossed parts of Mexico, the U.S., and Canada.",
+      "real": true,
+      "explain": "True, and stated just as confidently as the fake ones. That's the whole problem — tone never gives it away."
+    },
+    {
+      "q": "“Does the Claude app have a built-in calculator button?”",
+      "a": "Yes — tap the calculator icon in the bottom toolbar to do quick math without leaving the chat.",
+      "real": false,
+      "explain": "Invented. There's no such icon. This is exactly the kind of hallucination people hit when asking about a tool's specific features."
+    }
+  ],
+  "final": "Notice how confidence never told you which was true. That's the whole problem with hallucinations — they don't sound different. The fix: verify anything specific — names, numbers, quotes, features — before you rely on it."
+}
+</script>

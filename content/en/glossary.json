@@ -77,6 +77,7 @@
       "tier": 1,
       "group": "Risks & limitations",
       "definition": "When an AI confidently states something false — a made-up fact, quote, or source. It isn't lying on purpose; it's producing plausible-sounding words. Always double-check facts that matter.",
+      "viz": "spot-hallucination",
       "learnMore": { "label": "IBM: What are AI hallucinations?", "url": "https://www.ibm.com/think/topics/ai-hallucinations" }
     },
     {

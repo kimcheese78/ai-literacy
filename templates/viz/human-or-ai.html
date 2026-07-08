@@ -1,0 +1,47 @@
+<figure class="viz" id="hoa">
+<p class="viz-kicker">Which one sounds more like typical AI writing?</p>
+<div class="guess-dots" aria-hidden="true"><span class="guess-dot"></span><span class="guess-dot"></span><span class="guess-dot"></span></div>
+<div class="hoa-round" id="hoa-round">
+  <p class="hoa-prompt" id="hoa-prompt"></p>
+  <div class="hoa-pair" id="hoa-pair" role="group" aria-label="Pick the AI-style text">
+    <button type="button" class="hoa-choice" data-choice="a"><span class="hoa-label">A</span><span id="hoa-text-a"></span></button>
+    <button type="button" class="hoa-choice" data-choice="b"><span class="hoa-label">B</span><span id="hoa-text-b"></span></button>
+  </div>
+  <div class="guess-reveal" id="hoa-reveal" hidden>
+    <p class="guess-verdict" id="hoa-verdict"></p>
+    <p class="guess-explain" id="hoa-explain"></p>
+    <button type="button" id="hoa-next"></button>
+  </div>
+</div>
+<p class="guess-final" id="hoa-final" hidden></p>
+<noscript><p class="guess-explain">(This works best with JavaScript on. Without it: in all three pairs above, "A" is written in the more typical AI style — comprehensive and neutral — while "B" has the specific, quirky detail that's harder for a generic style to fake.)</p></noscript>
+<p class="viz-caption">Both texts in every pair were written for this demo — not pulled from a real person or a real chatbot reply. They illustrate common stylistic patterns, not a reliable detector.</p>
+</figure>
+<script type="application/json" id="hoa-data">
+{
+  "rounds": [
+    {
+      "prompt": "Topic: describing rain",
+      "a": "Rain is a form of precipitation that occurs when water droplets in clouds become too heavy to remain suspended. It plays an important role in the water cycle and supports ecosystems, agriculture, and drinking water supplies.",
+      "b": "The rain came in sideways today, rattling the tin roof like loose change in a dryer. My dog took one look outside and vetoed the whole idea.",
+      "aiIsA": true,
+      "explain": "A reads as typical AI style: comprehensive, neutral, textbook-accurate. B has the specific, quirky detail — the dryer simile, the dog's veto — that a generic style rarely reaches for."
+    },
+    {
+      "prompt": "Topic: a productivity tip",
+      "a": "One effective way to improve focus is the Pomodoro Technique: work in 25-minute intervals followed by short breaks. This helps maintain concentration while preventing burnout.",
+      "b": "Honestly? I just started leaving my phone in another room. Petty, but it works better than any app ever did.",
+      "aiIsA": true,
+      "explain": "A is balanced and covers the what-and-why — classic AI structure. B is one specific, slightly self-aware opinion — a very human move."
+    },
+    {
+      "prompt": "Topic: a restaurant review",
+      "a": "This restaurant offers a diverse menu with options for various dietary preferences. Service was prompt and the ambiance was pleasant, suitable for casual dining or special occasions.",
+      "b": "The waiter recommended the octopus like his life depended on it. It didn't disappoint, though I'm still finding olive oil on my sleeve.",
+      "aiIsA": true,
+      "explain": "A hedges into safe generalities that fit almost any restaurant. B has one specific moment, a joke, and a mundane detail — the texture AI writing tends to smooth away."
+    }
+  ],
+  "final": "There's no single reliable \"AI tell\" — this was about spotting patterns, not running a detector. AI writing keeps getting better at mimicking specific, quirky style too, which is exactly why spotting AI slop (in Key terms, above) gets harder every year."
+}
+</script>

@@ -28,6 +28,11 @@ for (const f of ['glossary.json', 'landscape.json', 'platforms.json']) {
 for (const f of readdirSync(join(CONTENT, 'sections'))) {
   collect(readFileSync(join(CONTENT, 'sections', f), 'utf8'), `sections/${f}`);
 }
+// Interactive widgets can cite sources too (e.g. the hallucination game cites NASA).
+const VIZ_DIR = join(ROOT, 'templates', 'viz');
+for (const f of readdirSync(VIZ_DIR)) {
+  collect(readFileSync(join(VIZ_DIR, f), 'utf8'), `templates/viz/${f}`);
+}
 
 const UA = 'Mozilla/5.0 (compatible; ai-actually-link-check; +https://github.com)';
 

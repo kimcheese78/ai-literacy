@@ -129,6 +129,141 @@
     });
   })();
 
+  // --- Spot the hallucination ---
+  (function () {
+    var cfg = data('hallu-data');
+    var roundEl = document.getElementById('hallu-round');
+    if (!cfg || !roundEl) return;
+    var qEl = document.getElementById('hallu-q');
+    var aEl = document.getElementById('hallu-a');
+    var choices = document.getElementById('hallu-choices');
+    var reveal = document.getElementById('hallu-reveal');
+    var verdict = document.getElementById('hallu-verdict');
+    var explain = document.getElementById('hallu-explain');
+    var nextBtn = document.getElementById('hallu-next');
+    var finalEl = document.getElementById('hallu-final');
+    var dots = document.querySelectorAll('#hallu .guess-dot');
+    var round = 0;
+
+    function updateDots() {
+      dots.forEach(function (d, i) {
+        d.classList.toggle('active', i === round);
+        d.classList.toggle('done', i < round);
+      });
+    }
+
+    function showRound() {
+      var r = cfg.rounds[round];
+      qEl.textContent = r.q;
+      aEl.textContent = r.a;
+      choices.hidden = false;
+      reveal.hidden = true;
+      updateDots();
+    }
+
+    function choose(pick) {
+      var r = cfg.rounds[round];
+      var correct = (pick === 'real') === r.real;
+      verdict.textContent = correct
+        ? (r.real ? 'Correct — that one was real.' : 'Correct — that one was made up.')
+        : (r.real ? 'Not quite — that one was actually real.' : 'Not quite — that one was made up.');
+      verdict.className = 'guess-verdict ' + (correct ? 'is-correct' : 'is-wrong');
+      explain.textContent = r.explain;
+      choices.hidden = true;
+      reveal.hidden = false;
+      nextBtn.textContent = round < cfg.rounds.length - 1 ? 'Next example →' : 'See the takeaway';
+    }
+
+    choices.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-choice]');
+      if (!b) return;
+      choose(b.getAttribute('data-choice'));
+    });
+
+    nextBtn.addEventListener('click', function () {
+      round += 1;
+      if (round < cfg.rounds.length) {
+        showRound();
+      } else {
+        roundEl.hidden = true;
+        dots.forEach(function (d) { d.classList.add('done'); d.classList.remove('active'); });
+        finalEl.hidden = false;
+        finalEl.textContent = cfg.final;
+      }
+    });
+
+    showRound();
+  })();
+
+  // --- Human or AI? ---
+  (function () {
+    var cfg = data('hoa-data');
+    var roundEl = document.getElementById('hoa-round');
+    if (!cfg || !roundEl) return;
+    var promptEl = document.getElementById('hoa-prompt');
+    var textA = document.getElementById('hoa-text-a');
+    var textB = document.getElementById('hoa-text-b');
+    var pair = document.getElementById('hoa-pair');
+    var reveal = document.getElementById('hoa-reveal');
+    var verdict = document.getElementById('hoa-verdict');
+    var explain = document.getElementById('hoa-explain');
+    var nextBtn = document.getElementById('hoa-next');
+    var finalEl = document.getElementById('hoa-final');
+    var dots = document.querySelectorAll('#hoa .guess-dot');
+    var round = 0;
+
+    function updateDots() {
+      dots.forEach(function (d, i) {
+        d.classList.toggle('active', i === round);
+        d.classList.toggle('done', i < round);
+      });
+    }
+
+    function showRound() {
+      var r = cfg.rounds[round];
+      promptEl.textContent = r.prompt;
+      textA.textContent = r.a;
+      textB.textContent = r.b;
+      pair.hidden = false;
+      reveal.hidden = true;
+      updateDots();
+    }
+
+    function choose(pick) {
+      var r = cfg.rounds[round];
+      var aiPick = r.aiIsA ? 'a' : 'b';
+      var correct = pick === aiPick;
+      verdict.textContent = correct
+        ? 'Correct — ' + aiPick.toUpperCase() + ' reads as the more typical AI style.'
+        : 'Not quite — ' + aiPick.toUpperCase() + ' reads as the more typical AI style.';
+      verdict.className = 'guess-verdict ' + (correct ? 'is-correct' : 'is-wrong');
+      explain.textContent = r.explain;
+      pair.hidden = true;
+      reveal.hidden = false;
+      nextBtn.textContent = round < cfg.rounds.length - 1 ? 'Next pair →' : 'See the takeaway';
+    }
+
+    pair.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-choice]');
+      if (!b) return;
+      choose(b.getAttribute('data-choice'));
+    });
+
+    nextBtn.addEventListener('click', function () {
+      round += 1;
+      if (round < cfg.rounds.length) {
+        showRound();
+      } else {
+        roundEl.hidden = true;
+        dots.forEach(function (d) { d.classList.add('done'); d.classList.remove('active'); });
+        finalEl.hidden = false;
+        finalEl.textContent = cfg.final;
+      }
+    });
+
+    showRound();
+  })();
+
   // --- Temperature dial ---
   (function () {
     var stops = data('temp-data');
