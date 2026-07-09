@@ -1,0 +1,40 @@
+{
+  "kicker": "Practical tips",
+  "takeaway": "Same tool. ==Way better results.==",
+  "intro": "None of this needs a new tool, a paid plan, or any technical skill — just a different habit. Every tip here works in ChatGPT, Claude, Gemini, or anything else with a text box.",
+  "lastUpdated": "2026-07-09",
+  "groups": [
+    {
+      "name": "Before you type",
+      "tips": [
+        { "lead": "Say who it's for and why.", "body": "\"Write a bio\" vs. \"a 2-sentence bio for my LinkedIn, friendly but professional.\" Same tool, wildly different result." },
+        { "lead": "Paste in the real thing.", "body": "Don't describe your email — paste it in and ask for edits. AI edits real text far better than it guesses at imagined text." },
+        { "lead": "Show, don't just tell.", "body": "One example of the output you want (\"like this: …\") locks in the pattern better than any description." }
+      ]
+    },
+    {
+      "name": "While you're going back and forth",
+      "tips": [
+        { "lead": "Don't start over — correct it.", "body": "\"Make it shorter\" or \"less formal\" builds on what's already good. Restarting throws away useful context." },
+        { "lead": "Ask it to ask you questions first.", "body": "For anything complex, try: \"Ask me whatever you need to know before starting.\" It often catches gaps you didn't think to mention." },
+        { "lead": "Say what to avoid, not just what you want.", "body": "\"Don't use corporate jargon\" is often more useful than trying to describe the tone you're after." },
+        { "lead": "Ask for 3 options, not 1.", "body": "Especially for names, taglines, or openings — comparing a few beats iterating on one." }
+      ]
+    },
+    {
+      "name": "When something's off",
+      "tips": [
+        { "lead": "If it seems wrong, say so.", "body": "\"Are you sure? Double-check that\" genuinely improves accuracy — models often catch their own mistake when asked directly." },
+        { "lead": "Break big asks into steps.", "body": "A vague \"plan my trip\" invites a generic answer. \"First just list the cities, we'll do the rest after\" gets a sharper one." },
+        { "lead": "Hit a wall? Try a different model.", "body": "No single AI is best at everything. The same question in a different chatbot can unlock a much better answer — see Today's tools, above." }
+      ]
+    },
+    {
+      "name": "Going further",
+      "tips": [
+        { "lead": "Stop repeating your instructions.", "body": "Most chatbots let you set standing preferences (a **[system prompt](#term-system-prompt)** or \"custom instructions\") so you don't re-explain your tone every time." },
+        { "lead": "Building something, not just chatting?", "body": "Coding assistants take these same ideas further, letting AI act across many steps on its own — see **[AI Agent](#term-ai-agent)** and **[Vibe coding](#term-vibe-coding)** in Key terms, above." }
+      ]
+    }
+  ]
+}

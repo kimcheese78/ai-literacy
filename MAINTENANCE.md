@@ -12,6 +12,7 @@ content files, review the diff, push.
 | Key terms (glossary) | `content/en/glossary.json` | Review quarterly |
 | Today's tools (landscape) | `content/en/landscape.json` | Review monthly, or when something big happens |
 | The name maze (platform breakdown) | `content/en/platforms.json` | Review monthly — product lineups change fast |
+| Cheat sheet (practical tips) | `content/en/cheatsheet.json` | Review quarterly — tips are evergreen, not product-specific |
 | Trending (v1.1, not built yet) | — | Weekly once added |
 
 Parked content (removed from the page 2026-07-06, kept for future separate
@@ -31,6 +32,7 @@ Copy, adapt, paste:
 - "Run `node check-links.mjs` and replace any dead source links with working equivalents."
 - "Quarterly review: read every prose section as a skeptical beginner and flag anything stale, jargony, or unclear before editing."
 - "The next-word widget examples feel stale — refresh the canned data in `templates/viz/next-word.html` (keep the same JSON shape)."
+- "Add a cheat-sheet tip about [X] under the '[category]' group in `content/en/cheatsheet.json` — same terse, bold-lead style as the others."
 
 The interactive widgets (`templates/viz/*.html` + logic in `templates/app.js`)
 run entirely on canned example data — no API calls, nothing to pay for, nothing

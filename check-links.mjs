@@ -20,7 +20,7 @@ function collect(text, from) {
   }
 }
 
-for (const f of ['glossary.json', 'landscape.json', 'platforms.json']) {
+for (const f of ['glossary.json', 'landscape.json', 'platforms.json', 'cheatsheet.json']) {
   collect(readFileSync(join(CONTENT, f), 'utf8'), f);
 }
 // site.json holds the site's own url/repoUrl (config, not sources) — and on the

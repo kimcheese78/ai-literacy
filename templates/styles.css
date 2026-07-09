@@ -417,6 +417,20 @@ mark {
 .myth-tag { background: var(--chip-bg); color: var(--muted); }
 .reality-tag { background: var(--accent-deep); color: #fff; }
 
+/* Cheat sheet */
+.tip-group { margin: 1rem 0; }
+.tip-group:first-child { margin-top: .1rem; }
+.tips { display: grid; gap: .6rem; margin-top: .5rem; }
+@media (min-width: 640px) { .tips { grid-template-columns: 1fr 1fr; } }
+.tip {
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--card); padding: .8rem .95rem;
+  border-left: 3px solid var(--accent);
+}
+.tip-lead { margin: 0 0 .25rem; font-weight: 700; font-size: .95rem; }
+.tip-body { margin: 0; font-size: .9rem; color: #37444f; line-height: 1.45; }
+.tip-body a { color: var(--accent); }
+
 /* Concept diagrams (flow boxes + arrows) */
 .diagram { display: grid; gap: 0; margin: .3rem 0; }
 .d-box {

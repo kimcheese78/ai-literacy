@@ -8,7 +8,7 @@ public edit history, one accountable curator. Nothing here may compromise that.
 
 - `content/en/` is the only place content lives: prose in `sections/*.md`
   (frontmatter + small markdown subset), structured data in `glossary.json`,
-  `landscape.json`, `platforms.json`, `site.json`.
+  `landscape.json`, `platforms.json`, `cheatsheet.json`, `site.json`.
 - `node build.mjs` validates content (fails on missing `lastUpdated`/`sources`)
   and writes `site/index.html`. Zero npm dependencies — keep it that way.
 - `node check-links.mjs` verifies every URL in content; 403s are warnings
@@ -21,7 +21,11 @@ public edit history, one accountable curator. Nothing here may compromise that.
 1. **Never bump `lastUpdated` without actually re-verifying the content.**
    The date is a public promise, not a cache buster.
 2. New factual claims about products need a source from official docs or
-   reputable press — added to `sources`, not just mentioned.
+   reputable press — added to `sources`, not just mentioned. `cheatsheet.json`
+   is the one exception: its tips are general, evergreen usage advice, not
+   product claims, so they don't need per-tip sources. Keep it that way — if
+   a tip only works in one specific product, it belongs in `platforms.json`
+   or `landscape.json` instead, with a source.
 3. Plain language: audience has zero AI background. No term may be used before
    it's defined on the page (the glossary probably already has it — link with
    a `#term-<slug>` anchor if needed). Prefer analogies over precision.

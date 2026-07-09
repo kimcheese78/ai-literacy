@@ -12,7 +12,8 @@
     { "id": "glossary", "label": "Key terms" },
     { "id": "landscape", "label": "Today's tools" },
     { "id": "platforms", "label": "The name maze" },
-    { "id": "how-people-use", "label": "What it's used for" }
+    { "id": "how-people-use", "label": "What it's used for" },
+    { "id": "cheat-sheet", "label": "Cheat sheet" }
   ],
   "glossaryTiers": [
     { "tier": 1, "title": "Must-know basics", "subtitle": "Twelve words that unlock every AI conversation. Start here.", "openByDefault": true },

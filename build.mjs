@@ -99,6 +99,17 @@ function validatePlatforms(platforms) {
   }
 }
 
+function validateCheatsheet(cs) {
+  if (!cs) return;
+  requireFields(cs, ['lastUpdated', 'groups'], 'cheatsheet.json');
+  validateDate(cs.lastUpdated, 'cheatsheet.json');
+  for (const g of cs.groups ?? []) {
+    const label = `cheatsheet group "${g.name ?? '(unnamed)'}"`;
+    requireFields(g, ['name', 'tips'], label);
+    for (const t of g.tips ?? []) requireFields(t, ['lead', 'body'], `${label} tip`);
+  }
+}
+
 function validateLandscape(landscape) {
   if (!landscape) return;
   for (const c of landscape.cards ?? []) {
@@ -274,19 +285,42 @@ ${rows}
   return sectionShell('platforms', 'Same brand, different products', [updatedChip(newest)], intro + extras + companies, platforms);
 }
 
+function renderCheatsheet(cs) {
+  const groups = cs.groups
+    .map((g) => {
+      const tips = g.tips
+        .map(
+          (t) => `<div class="tip">
+<p class="tip-lead">${inline(t.lead)}</p>
+<p class="tip-body">${inline(t.body)}</p>
+</div>`
+        )
+        .join('\n');
+      return `<div class="tip-group">
+<h3 class="term-group">${escapeHtml(g.name)}</h3>
+<div class="tips">${tips}</div>
+</div>`;
+    })
+    .join('\n');
+  const intro = cs.intro ? `<p class="prose">${inline(cs.intro)}</p>` : '';
+  return sectionShell('cheat-sheet', 'Get more out of any AI', [updatedChip(cs.lastUpdated)], intro + groups, cs);
+}
+
 // ---------- main ----------
 
 const site = loadJSON('site.json');
 const glossary = loadJSON('glossary.json');
 const landscape = loadJSON('landscape.json');
 const platforms = loadJSON('platforms.json');
-const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'platforms', 'how-people-use'];
+const cheatsheet = loadJSON('cheatsheet.json');
+const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'platforms', 'how-people-use', 'cheat-sheet'];
 const proseSections = Object.fromEntries(['what-is-ai', 'how-people-use'].map((n) => [n, loadSection(n)]));
 
 if (site) requireFields(site, ['name', 'tagline', 'description', 'lang', 'nav', 'glossaryTiers', 'footer'], 'site.json');
 validateGlossary(glossary);
 validateLandscape(landscape);
 validatePlatforms(platforms);
+validateCheatsheet(cheatsheet);
 Object.values(proseSections).forEach(validateSection);
 
 if (errors.length) {
@@ -301,6 +335,7 @@ const rendered = sectionOrder
     if (id === 'glossary') return renderGlossary(site, glossary);
     if (id === 'landscape') return renderLandscape(landscape);
     if (id === 'platforms') return renderPlatforms(platforms);
+    if (id === 'cheat-sheet') return renderCheatsheet(cheatsheet);
     const sec = proseSections[id];
     const extra = sec.meta.readingTime ? [`<span class="chip">${escapeHtml(sec.meta.readingTime)}</span>`] : [];
     return renderProse(sec, extra);
@@ -353,4 +388,7 @@ mkdirSync(join(OUT_DIR, dirname(OUT_FILE)), { recursive: true });
 writeFileSync(join(OUT_DIR, OUT_FILE), html);
 
 for (const w of warnings) console.warn(`  ⚠ ${w}`);
-console.log(`✓ Built site/${OUT_FILE} (${(html.length / 1024).toFixed(1)} KB, ${glossary.terms.length} glossary terms, ${landscape.cards.length} product cards)`);
+const tipCount = cheatsheet.groups.reduce((n, g) => n + g.tips.length, 0);
+console.log(
+  `✓ Built site/${OUT_FILE} (${(html.length / 1024).toFixed(1)} KB, ${glossary.terms.length} glossary terms, ${landscape.cards.length} product cards, ${tipCount} cheat-sheet tips)`
+);
