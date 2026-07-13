@@ -438,8 +438,7 @@ mark {
   font-family: var(--display); font-size: .85rem;
   display: inline-flex; align-items: center; justify-content: center;
 }
-.tips { display: grid; gap: .9rem 1.6rem; margin-top: .8rem; }
-@media (min-width: 640px) { .tips { grid-template-columns: 1fr 1fr; } }
+.tips { display: grid; gap: .9rem; margin-top: .8rem; }
 .tip { border-left: 3px solid var(--accent-soft); padding: .05rem 0 .05rem .85rem; }
 .tip-lead { margin: 0 0 .2rem; font-weight: 700; font-size: 1rem; }
 .tip-body { margin: 0; font-size: .92rem; color: #37444f; line-height: 1.5; }
