@@ -15,11 +15,11 @@
     {
       "name": "Claude",
       "company": "Anthropic",
-      "plainDescription": "A chatbot known for careful, natural writing and strong reasoning. Particularly good with long documents and thoughtful, nuanced work. (Full disclosure: this site is maintained with Claude's help — see the trust section.)",
+      "plainDescription": "A chatbot known for careful, natural writing and strong reasoning. Particularly good with long documents and thoughtful, nuanced work. (Full disclosure: this site is maintained with Claude's help — see the public edit history in the footer.)",
       "goodFor": ["Writing and editing that sounds human", "Reading and summarizing long documents", "Coding help (Claude Code is a developer favorite)"],
       "freeAccess": "Free to use; paid plan adds heavier use and newer features.",
       "sources": [{ "label": "Official site", "url": "https://claude.com/product/overview" }],
-      "lastUpdated": "2026-07-03"
+      "lastUpdated": "2026-07-10"
     },
     {
       "name": "Gemini",

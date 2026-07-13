@@ -38,7 +38,7 @@
     },
     {
       "company": "Google",
-      "modelsNote": "Their engines are the Gemini series (currently Gemini 3.5, in Pro and fast/cheap Flash tiers).",
+      "modelsNote": "Their engines are the Gemini series (currently Gemini 3.5 Flash, the fast/cheap tier; the larger Pro tier is still rolling out).",
       "products": [
         { "name": "Gemini", "what": "The chatbot — web, app, and built into Android phones." },
         { "name": "AI Mode in Search", "what": "AI answers inside regular Google Search — the AI many people use without realizing it." },
@@ -50,7 +50,7 @@
         { "label": "Gemini overview", "url": "https://gemini.google/about/" },
         { "label": "NotebookLM", "url": "https://notebooklm.google/" }
       ],
-      "lastUpdated": "2026-07-06"
+      "lastUpdated": "2026-07-10"
     },
     {
       "company": "Microsoft",

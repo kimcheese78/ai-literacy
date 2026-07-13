@@ -2,7 +2,7 @@
 title: What is everyone using AI for?
 kicker: Real usage
 takeaway: Not sci-fi. Mostly ==everyday help==.
-lastUpdated: 2026-07-06
+lastUpdated: 2026-07-10
 reviewBy: quarterly
 ---
 The best available answer comes from the largest study of real usage: OpenAI and academic researchers analyzed **1.5 million ChatGPT conversations** (privacy-protected) to see what people do with it. The picture is surprisingly down-to-earth:
