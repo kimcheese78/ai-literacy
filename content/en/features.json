@@ -1,0 +1,55 @@
+{
+  "kicker": "Worth trying",
+  "takeaway": "Most people only ever use ==the plain chat box==.",
+  "intro": "Each major chatbot has real, named features beyond typing a question and getting an answer back. A full reference, grouped by what you're trying to do — click a platform to expand its table.",
+  "platforms": [
+    {
+      "name": "Claude",
+      "company": "Anthropic",
+      "features": [
+        { "group": "Set up once", "name": "Projects", "what": "Group files and instructions into one reusable workspace, so Claude keeps the same context across every chat inside it.", "source": { "label": "Claude Help Center", "url": "https://support.claude.com/en/articles/9517075-what-are-projects" } },
+        { "group": "Set up once", "name": "Memory", "what": "Claude remembers your name, preferences, and ongoing projects across separate conversations. View or delete anything it's stored, anytime.", "source": { "label": "Anthropic", "url": "https://claude.com/blog/memory" } },
+        { "group": "Ask better questions", "name": "Extended thinking", "what": "A toggle that lets Claude spend more time breaking down a problem and exploring approaches before answering — visible as a \"thinking\" section above the reply.", "source": { "label": "Claude Help Center", "url": "https://support.claude.com/en/articles/10574485-using-extended-thinking" } },
+        { "group": "Ask better questions", "name": "Web search", "what": "Toggle on so Claude can check the live web for current information, with citations you can check yourself.", "source": { "label": "Claude Help Center", "url": "https://support.claude.com/en/articles/10684626-enable-and-use-web-search" } },
+        { "group": "Ask better questions", "name": "Research", "what": "A deeper mode where Claude runs many searches on its own, following up on what it finds, and returns a cited answer in minutes.", "source": { "label": "Claude Help Center", "url": "https://support.claude.com/en/articles/11088861-use-research-on-claude" } },
+        { "group": "Create & analyze", "name": "Artifacts", "what": "Pop code, documents, or diagrams out into an editable side panel you can iterate on and export.", "source": { "label": "Claude Help Center", "url": "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" } },
+        { "group": "Create & analyze", "name": "File & image uploads", "what": "Upload PDFs, Word docs, spreadsheets, or photos for Claude to read, summarize, or analyze.", "source": { "label": "Claude Help Center", "url": "https://support.claude.com/en/articles/8241126-upload-files-to-claude" } },
+        { "group": "Connect your apps", "name": "Google Workspace connectors", "what": "Connect Gmail, Calendar, and Drive so Claude can search your email, manage your calendar, and work with your documents.", "source": { "label": "Claude Help Center", "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" } },
+        { "group": "In the chat box", "name": "Skills (`/` menu)", "what": "Type `/` in the chat box to browse ready-made abilities and invoke one by name — like a saved writing style you reuse across chats.", "source": { "label": "Claude Help Center", "url": "https://support.claude.com/en/articles/12512180-use-skills-in-claude" } }
+      ],
+      "lastUpdated": "2026-07-10"
+    },
+    {
+      "name": "ChatGPT",
+      "company": "OpenAI",
+      "features": [
+        { "group": "Set up once", "name": "Custom GPTs", "what": "Build your own tailored version of ChatGPT with its own instructions, files, and tools — no coding required.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/8554407-gpts-in-chatgpt" } },
+        { "group": "Set up once", "name": "Memory", "what": "ChatGPT remembers useful details across chats so you don't have to repeat yourself. View, edit, or clear it in Settings.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/8590148-memory-faq" } },
+        { "group": "Set up once", "name": "Scheduled tasks", "what": "Ask ChatGPT to check on something or remind you later, on a repeating schedule — briefings, reminders, monitoring.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt" } },
+        { "group": "Ask better questions", "name": "Deep research", "what": "Describe what you need, and ChatGPT reads and synthesizes many sources into a documented, cited report.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt" } },
+        { "group": "Create & analyze", "name": "Images", "what": "Generate an image from a description, or upload one and ask for specific edits, in plain language.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/11084440-chatgpt-images-faq" } },
+        { "group": "Create & analyze", "name": "Data analysis", "what": "Upload a spreadsheet or CSV and ask questions about it — ChatGPT writes and runs the code to summarize, chart, or clean it.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/8437071-code-interpreter" } },
+        { "group": "Talk instead of type", "name": "Advanced Voice Mode", "what": "A real back-and-forth spoken conversation, not just text read aloud — it listens, responds, and picks up on tone.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/8400625-voice-mode-faq" } },
+        { "group": "Connect your apps", "name": "Apps & connectors", "what": "Connect Gmail, Google Drive, and other apps so ChatGPT can search and reference your own information when asked.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/11487775-connectors-in-chatgpt" } },
+        { "group": "In the chat box", "name": "Tool menu (`/`)", "what": "Type `/` in the message box to pull up tools like Search on the spot, instead of hunting through menus.", "source": { "label": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/9237897-chatgpt-search" } }
+      ],
+      "lastUpdated": "2026-07-10"
+    },
+    {
+      "name": "Gemini",
+      "company": "Google",
+      "features": [
+        { "group": "Set up once", "name": "Gems", "what": "Save a custom version of Gemini with its own instructions and files for a task you repeat often.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/15236321" } },
+        { "group": "Ask better questions", "name": "Deep Research", "what": "Gemini browses dozens of sites on its own and writes up a cited, multi-page report on a topic you assign.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/15719111" } },
+        { "group": "Ask better questions", "name": "Guided Learning", "what": "A tutoring mode that breaks a topic into steps and questions instead of just handing you an answer.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/16448384" } },
+        { "group": "Create & analyze", "name": "Image generation & editing", "what": "Create an image from a description, or upload one and ask for specific edits in plain language.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/14286560" } },
+        { "group": "Create & analyze", "name": "Canvas", "what": "A shared workspace for building a document, app, or slides with Gemini step by step, not just one long reply.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/16047321" } },
+        { "group": "Talk instead of type", "name": "Live", "what": "Talk to Gemini out loud and show it your camera or screen — it sees what you see and talks you through it in real time.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/15274899" } },
+        { "group": "Connect your apps", "name": "Workspace integration", "what": "On paid plans, Gemini reads and drafts directly inside Gmail, Docs, and Drive, using your own files and email as context.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/15229592" } },
+        { "group": "Connect your apps", "name": "Connected apps", "what": "Let Gemini work with other apps you use — Calendar, YouTube Music, Google Home, and more — with your permission.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/13695044" } },
+        { "group": "In the chat box", "name": "App mentions (`@`)", "what": "Type `@` in the chat box to point Gemini at a specific app in your prompt — like `@Google Tasks` to add a to-do.", "source": { "label": "Gemini Apps Help", "url": "https://support.google.com/gemini/answer/13695044" } }
+      ],
+      "lastUpdated": "2026-07-10"
+    }
+  ]
+}

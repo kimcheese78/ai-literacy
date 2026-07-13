@@ -110,6 +110,20 @@ function validateCheatsheet(cs) {
   }
 }
 
+function validateFeatures(features) {
+  if (!features) return;
+  for (const p of features.platforms ?? []) {
+    const label = `features platform "${p.name ?? '(unnamed)'}"`;
+    requireFields(p, ['name', 'features', 'lastUpdated'], label);
+    validateDate(p.lastUpdated, label);
+    for (const f of p.features ?? []) {
+      const flabel = `${label} feature "${f.name ?? '(unnamed)'}"`;
+      requireFields(f, ['group', 'name', 'what', 'source'], flabel);
+      if (f.source) requireFields(f.source, ['label', 'url'], `${flabel} source`);
+    }
+  }
+}
+
 function validateLandscape(landscape) {
   if (!landscape) return;
   for (const c of landscape.cards ?? []) {
@@ -285,6 +299,46 @@ ${rows}
   return sectionShell('platforms', 'Same brand, different products', [updatedChip(newest)], intro + extras + companies, platforms);
 }
 
+function renderFeatures(landscape, features) {
+  const badgeFor = (name) => {
+    const i = landscape.cards.findIndex((c) => c.name === name);
+    return BADGE_COLORS[i < 0 ? 0 : i % BADGE_COLORS.length];
+  };
+  const platforms = features.platforms
+    .map((p, i) => {
+      let currentGroup = null;
+      const rows = p.features
+        .map((f) => {
+          const heading =
+            f.group && f.group !== currentGroup ? `<tr class="fgroup"><td colspan="3">${escapeHtml(f.group)}</td></tr>\n` : '';
+          currentGroup = f.group ?? currentGroup;
+          return `${heading}<tr>
+<td class="fname">${inline(f.name)}</td>
+<td class="fwhat">${inline(f.what)}</td>
+<td class="fsource"><a href="${f.source.url}" target="_blank" rel="noopener">${escapeHtml(f.source.label)}</a></td>
+</tr>`;
+        })
+        .join('\n');
+      const badge = `<span class="badge" aria-hidden="true" style="--badge:${badgeFor(p.name)}">${escapeHtml(p.name[0])}</span>`;
+      return `<details class="tier"${i === 0 ? ' open' : ''}>
+<summary>${badge}${escapeHtml(p.name)} <span class="count">(${p.features.length} features)</span></summary>
+<div class="terms">
+<div class="feature-table-wrap"><table class="feature-table">
+<thead><tr><th>Feature</th><th>What it does</th><th>Source</th></tr></thead>
+<tbody>
+${rows}
+</tbody>
+</table></div>
+<div class="meta pmeta"><span>Checked ${formatDate(p.lastUpdated)}</span></div>
+</div>
+</details>`;
+    })
+    .join('\n');
+  const intro = features.intro ? `<p class="prose">${inline(features.intro)}</p>` : '';
+  const newest = features.platforms.map((p) => p.lastUpdated).sort().at(-1);
+  return sectionShell('features', 'Standout features worth trying', [updatedChip(newest)], intro + platforms, features);
+}
+
 function renderCheatsheet(cs) {
   const groups = cs.groups
     .map((g) => {
@@ -312,14 +366,16 @@ const site = loadJSON('site.json');
 const glossary = loadJSON('glossary.json');
 const landscape = loadJSON('landscape.json');
 const platforms = loadJSON('platforms.json');
+const features = loadJSON('features.json');
 const cheatsheet = loadJSON('cheatsheet.json');
-const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'platforms', 'how-people-use', 'cheat-sheet'];
+const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'platforms', 'features', 'how-people-use', 'cheat-sheet'];
 const proseSections = Object.fromEntries(['what-is-ai', 'how-people-use'].map((n) => [n, loadSection(n)]));
 
 if (site) requireFields(site, ['name', 'tagline', 'description', 'lang', 'nav', 'glossaryTiers', 'footer'], 'site.json');
 validateGlossary(glossary);
 validateLandscape(landscape);
 validatePlatforms(platforms);
+validateFeatures(features);
 validateCheatsheet(cheatsheet);
 Object.values(proseSections).forEach(validateSection);
 
@@ -335,6 +391,7 @@ const rendered = sectionOrder
     if (id === 'glossary') return renderGlossary(site, glossary);
     if (id === 'landscape') return renderLandscape(landscape);
     if (id === 'platforms') return renderPlatforms(platforms);
+    if (id === 'features') return renderFeatures(landscape, features);
     if (id === 'cheat-sheet') return renderCheatsheet(cheatsheet);
     const sec = proseSections[id];
     const extra = sec.meta.readingTime ? [`<span class="chip">${escapeHtml(sec.meta.readingTime)}</span>`] : [];

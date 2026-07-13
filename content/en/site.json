@@ -12,6 +12,7 @@
     { "id": "glossary", "label": "Key terms" },
     { "id": "landscape", "label": "Today's tools" },
     { "id": "platforms", "label": "The name maze" },
+    { "id": "features", "label": "Standout features" },
     { "id": "how-people-use", "label": "What it's used for" },
     { "id": "cheat-sheet", "label": "Cheat sheet" }
   ],

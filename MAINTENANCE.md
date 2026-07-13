@@ -12,6 +12,7 @@ content files, review the diff, push.
 | Key terms (glossary) | `content/en/glossary.json` | Review quarterly |
 | Today's tools (landscape) | `content/en/landscape.json` | Review monthly, or when something big happens |
 | The name maze (platform breakdown) | `content/en/platforms.json` | Review monthly — product lineups change fast |
+| Standout features (per-platform cheat sheet) | `content/en/features.json` | Review monthly — features get renamed, sunset, or added fast |
 | Cheat sheet (practical tips) | `content/en/cheatsheet.json` | Review quarterly — tips are evergreen, not product-specific |
 | Trending (v1.1, not built yet) | — | Weekly once added |
 

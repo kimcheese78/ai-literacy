@@ -489,6 +489,31 @@ mark {
 }
 .pmeta a { color: var(--accent); }
 
+/* Standout features table */
+.feature-table {
+  width: 100%; border-collapse: collapse;
+  font-size: .92rem; margin: 0 0 .6rem;
+}
+.feature-table th, .feature-table td {
+  border: 1px solid var(--border);
+  padding: .6rem .75rem; text-align: left; vertical-align: top;
+}
+.feature-table thead th {
+  background: var(--chip-bg); font-size: .78rem;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+}
+.feature-table .fgroup td {
+  background: var(--accent-soft); color: var(--accent-deep);
+  font-size: .72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  padding: .35rem .75rem;
+}
+.feature-table .fname { font-weight: 700; white-space: nowrap; }
+.feature-table .fwhat { color: #37444f; }
+.feature-table .fsource { white-space: nowrap; font-size: .85rem; }
+.feature-table .fsource a { color: var(--accent); }
+.feature-table-wrap { overflow-x: auto; margin: 0 0 .6rem; }
+
 /* Card monogram badge */
 .badge {
   width: 2rem; height: 2rem; border-radius: 50%;
