@@ -341,7 +341,7 @@ ${rows}
 
 function renderCheatsheet(cs) {
   const groups = cs.groups
-    .map((g) => {
+    .map((g, gi) => {
       const tips = g.tips
         .map(
           (t) => `<div class="tip">
@@ -351,7 +351,7 @@ function renderCheatsheet(cs) {
         )
         .join('\n');
       return `<div class="tip-group">
-<h3 class="term-group">${escapeHtml(g.name)}</h3>
+<h3 class="tip-head"><span class="tip-num" aria-hidden="true">${gi + 1}</span>${escapeHtml(g.name)}</h3>
 <div class="tips">${tips}</div>
 </div>`;
     })
