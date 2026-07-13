@@ -2,8 +2,16 @@
   "kicker": "Practical tips",
   "takeaway": "Same tool. ==Way better results.==",
   "intro": "None of this needs a new tool, a paid plan, or any technical skill — just a different habit. Every tip here works in ChatGPT, Claude, Gemini, or anything else with a text box.",
-  "lastUpdated": "2026-07-09",
+  "lastUpdated": "2026-07-13",
   "groups": [
+    {
+      "name": "Never used one? Your first 20 minutes",
+      "tips": [
+        { "lead": "Ask about something you know deeply.", "body": "Your job, your hobby, your hometown. You'll see its strengths and flaws faster than any article can explain them." },
+        { "lead": "Catch it being wrong — on purpose.", "body": "Ask detailed questions about a niche topic you know well and hunt for small errors. Finding your first mistake is the moment AI stops being magic and starts being a tool." },
+        { "lead": "Give it a real task, not a test.", "body": "Rewrite an awkward email. Turn messy notes into a plan. Ask it to explain a confusing letter \"like I'm not a lawyer.\" Real tasks show you what it's for." }
+      ]
+    },
     {
       "name": "Before you type",
       "tips": [
@@ -30,10 +38,18 @@
       ]
     },
     {
+      "name": "Keep yourself safe",
+      "tips": [
+        { "lead": "Don't paste in secrets.", "body": "No passwords, ID numbers, or confidential work documents. Treat a chatbot like a very smart stranger: helpful with anything you'd say out loud in public." },
+        { "lead": "Know where your words go.", "body": "Chats aren't as private as they feel — depending on your settings, they can be stored and used to improve the AI. Every major chatbot has a privacy setting for this. Worth checking once." },
+        { "lead": "Big decision? AI advises, you verify.", "body": "For health, money, or legal questions, use AI to understand your situation and prepare better questions — then confirm with a professional or an official source before acting." }
+      ]
+    },
+    {
       "name": "Going further",
       "tips": [
         { "lead": "Stop repeating your instructions.", "body": "Most chatbots let you set standing preferences (a **[system prompt](#term-system-prompt)** or \"custom instructions\") so you don't re-explain your tone every time." },
-        { "lead": "Building something, not just chatting?", "body": "Coding assistants take these same ideas further, letting AI act across many steps on its own — see **[AI Agent](#term-ai-agent)** and **[Vibe coding](#term-vibe-coding)** in Key terms, above." }
+        { "lead": "Building something, not just chatting?", "body": "Coding assistants take these same ideas further, letting AI act across many steps on its own — see **[AI Agent](#term-ai-agent)** and **[Vibe coding](#term-vibe-coding)** in Key terms, below." }
       ]
     }
   ]

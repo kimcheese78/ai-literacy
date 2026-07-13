@@ -2,7 +2,7 @@
 title: What is AI?
 kicker: The basics
 takeaway: AI doesn't ==know== anything. It ==predicts==.
-lastUpdated: 2026-07-04
+lastUpdated: 2026-07-13
 reviewBy: quarterly
 readingTime: 60 seconds
 ---
@@ -23,7 +23,7 @@ Sounds too simple to matter? Try doing the job yourself:
 That one idea also explains the two things beginners most need to know:
 
 - **Why it's so useful:** it has "read" more than any human ever could, and it's endlessly patient. Great for drafting, summarizing, explaining, translating, brainstorming.
-- **Why you can't fully trust it:** it predicts *plausible* words, not *verified* facts. Sometimes it confidently makes things up — that's called a **hallucination** (defined below). ==Use it as a brilliant, fast, occasionally-wrong assistant — not as an encyclopedia.==
+- **Why you can't fully trust it:** it predicts *plausible* words, not *verified* facts. Sometimes it confidently makes things up — that's called a **[hallucination](#term-hallucination)**. ==Use it as a brilliant, fast, occasionally-wrong assistant — not as an encyclopedia.==
 
 **And what it is not:** it isn't conscious, it doesn't have goals or feelings, and it isn't a search engine (though many chatbots can now search the web when asked).
 

@@ -82,6 +82,9 @@ nav[aria-label="Sections"] {
   padding-bottom: .5rem; scrollbar-width: none;
 }
 nav[aria-label="Sections"]::-webkit-scrollbar { display: none; }
+@media (min-width: 600px) {
+  nav[aria-label="Sections"] { flex-wrap: wrap; overflow-x: visible; }
+}
 nav[aria-label="Sections"] a {
   flex: 0 0 auto;
   font-size: .875rem;

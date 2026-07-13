@@ -11,7 +11,7 @@
   var btn = document.getElementById('toggle-all-terms');
   if (btn) {
     btn.addEventListener('click', function () {
-      var tiers = document.querySelectorAll('details.tier');
+      var tiers = document.querySelectorAll('#glossary details.tier');
       var anyClosed = Array.prototype.some.call(tiers, function (d) { return !d.open; });
       tiers.forEach(function (d) { d.open = anyClosed; });
       btn.textContent = anyClosed ? 'Collapse all terms' : 'Expand all 3 tiers';

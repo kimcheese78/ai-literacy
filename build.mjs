@@ -239,7 +239,7 @@ function renderGlossary(site, glossary) {
 <div class="terms">${items}</div>
 </details>`;
   });
-  const intro = `<p class="prose">Every AI word you're likely to run into, in plain language. Start with Tier 1 — the other tiers can wait until you need them.</p>`;
+  const intro = `<p class="prose">Every AI word you're likely to run into, in plain language. You don't need to read this straight through — skim Tier 1 now, then come back whenever a headline or a settings menu confuses you.</p>`;
   const extras = (glossary.viz ?? []).map(loadViz).join('\n');
   const tools = `<div class="glossary-tools"><button type="button" id="toggle-all-terms">Expand all 3 tiers</button></div>`;
   return sectionShell('glossary', 'Key terms, without the jargon', [updatedChip(glossary.lastUpdated)], intro + tiers.join('\n') + extras + tools, glossary);
@@ -368,7 +368,7 @@ const landscape = loadJSON('landscape.json');
 const platforms = loadJSON('platforms.json');
 const features = loadJSON('features.json');
 const cheatsheet = loadJSON('cheatsheet.json');
-const sectionOrder = ['what-is-ai', 'glossary', 'landscape', 'platforms', 'features', 'how-people-use', 'cheat-sheet'];
+const sectionOrder = ['what-is-ai', 'how-people-use', 'landscape', 'platforms', 'features', 'cheat-sheet', 'glossary'];
 const proseSections = Object.fromEntries(['what-is-ai', 'how-people-use'].map((n) => [n, loadSection(n)]));
 
 if (site) requireFields(site, ['name', 'tagline', 'description', 'lang', 'nav', 'glossaryTiers', 'footer'], 'site.json');
