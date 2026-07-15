@@ -570,8 +570,65 @@ mark {
 .receipt .why { font-size: .78rem; color: var(--muted); display: block; line-height: 1.35; }
 .receipt .stamp { font-size: 1.15rem; color: var(--accent); }
 
+/* ---------- Motion & engagement ---------- */
+/* Hero entrance (pure CSS — runs once, always ends visible) */
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } }
+.site-header > * { animation: rise-in .55s ease both; }
+.site-header .tagline { animation-delay: .07s; }
+.site-header .promise { animation-delay: .14s; }
+.site-header .hand-note { animation-delay: .21s; }
+.site-header nav { animation-delay: .28s; }
+@keyframes marker-swipe { from { background-size: 0% 100%; } }
+.tagline .u-marker { background-repeat: no-repeat; animation: marker-swipe .8s ease .55s both; }
+
+/* Reading progress bar (a row of marker colors) + floating back-to-top */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; width: 100%; height: 3px;
+  background: linear-gradient(90deg, #0f8a76, #b45309, #a13d63, #5b5bd6);
+  transform: scaleX(0); transform-origin: 0 50%; z-index: 60;
+}
+.to-top {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 50;
+  width: 2.7rem; height: 2.7rem; border-radius: 50%;
+  border: 1.5px solid var(--ink); background: var(--card); color: var(--ink);
+  font: inherit; font-size: 1.15rem; line-height: 1; cursor: pointer;
+  box-shadow: 2px 2px 0 var(--border);
+  opacity: 0; pointer-events: none; transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+.to-top:hover { background: var(--accent-soft); }
+
+/* Scroll reveals — initial hidden state only exists once JS adds .js-anim,
+   so the page never hides content without JavaScript. */
+html.js-anim .rv { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+html.js-anim .rv.is-in { opacity: 1; transform: none; }
+/* Marker highlights swipe in when their block (or the mark itself) is reached */
+html.js-anim main mark { background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .7s ease .2s; }
+html.js-anim main .is-in mark, html.js-anim main mark.is-in { background-size: 100% 100%; }
+/* Usage chart bars grow into view (widths restored by JS on reveal) */
+html.js-anim .u-fill { transition: width .9s ease .15s; }
+/* Token chopper chips pop in one by one */
+html.js-anim .chop-line .tk { opacity: 0; transform: scale(.6); transition: opacity .4s ease, transform .4s ease; }
+html.js-anim .rv.is-in .chop-line .tk { opacity: 1; transform: none; }
+/* Cheat-sheet tips cascade inside their revealed group */
+html.js-anim .rv .tips .tip { opacity: 0; transform: translateY(10px); transition: opacity .45s ease, transform .45s ease; }
+html.js-anim .rv.is-in .tips .tip { opacity: 1; transform: none; }
+html.js-anim .rv.is-in .tips .tip:nth-child(2) { transition-delay: 70ms; }
+html.js-anim .rv.is-in .tips .tip:nth-child(3) { transition-delay: 140ms; }
+html.js-anim .rv.is-in .tips .tip:nth-child(4) { transition-delay: 210ms; }
+
+/* Micro-interactions (work with or without JS) */
+details.tier[open] > .terms { animation: tier-open .25s ease; }
+@keyframes tier-open { from { opacity: 0; transform: translateY(-4px); } }
+.tier > summary:hover { color: var(--accent-deep); }
+.card { transition: border-color .15s ease, box-shadow .15s ease; }
+.card:hover { border-color: var(--accent); box-shadow: 3px 3px 0 var(--accent-soft); }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .tier > summary::before { transition: none; }
   .nw-bar .fill { transition: none; }
+  .site-header > *, .tagline .u-marker, details.tier[open] > .terms { animation: none; }
+  .card, .to-top { transition: none; }
 }

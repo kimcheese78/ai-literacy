@@ -264,6 +264,71 @@
     showRound();
   })();
 
+  // --- Scroll-driven motion (skipped entirely under prefers-reduced-motion) ---
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('js-anim');
+
+    // Reading progress bar + floating back-to-top button
+    var bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+    var toTop = document.createElement('button');
+    toTop.className = 'to-top';
+    toTop.type = 'button';
+    toTop.textContent = '↑';
+    toTop.setAttribute('aria-label', 'Back to top');
+    toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.body.appendChild(toTop);
+    var ticking = false;
+    function paint() {
+      ticking = false;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+      toTop.classList.toggle('show', window.scrollY > window.innerHeight * 1.2);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+    paint();
+
+    // Usage-chart bars start empty and grow when revealed
+    Array.prototype.forEach.call(document.querySelectorAll('.u-fill'), function (f) {
+      f.setAttribute('data-w', f.style.width);
+      f.style.width = '0%';
+    });
+    // Token chopper chips pop in one by one
+    Array.prototype.forEach.call(document.querySelectorAll('.chop-line .tk'), function (t, i) {
+      t.style.transitionDelay = Math.min(i * 70, 700) + 'ms';
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        en.target.classList.add('is-in');
+        Array.prototype.forEach.call(en.target.querySelectorAll('.u-fill[data-w]'), function (f) {
+          f.style.width = f.getAttribute('data-w');
+        });
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+
+    var rvSel = '.kicker, .section-head, .takeaway, p.prose, .prose > p, .prose > ul, .prose > ol, ' +
+      '.viz, .card, .tip-group, .myth-reality, details.tier, .glossary-tools';
+    Array.prototype.forEach.call(document.querySelectorAll(rvSel), function (el) {
+      el.classList.add('rv');
+      io.observe(el);
+    });
+    // Tool cards cascade left-to-right inside their grid
+    Array.prototype.forEach.call(document.querySelectorAll('.cards .card'), function (c, i) {
+      c.style.transitionDelay = Math.min(i * 70, 350) + 'ms';
+    });
+    // Marker highlights swipe in even when their parent isn't a revealed block
+    Array.prototype.forEach.call(document.querySelectorAll('main mark'), function (m) { io.observe(m); });
+  })();
+
   // --- Temperature dial ---
   (function () {
     var stops = data('temp-data');
